@@ -13,7 +13,7 @@ import javafx.scene.image.ImageView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HelloController<Lable> implements Initializable {
+public class SeatController<Lable> implements Initializable {
     @FXML
     private Button previousButton;
     @FXML
