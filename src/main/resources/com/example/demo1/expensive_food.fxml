@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.PageController">
+   <children>
+      <Label alignment="CENTER" layoutX="-1.0" prefHeight="107.0" prefWidth="960.0" text="You can update your meal set">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="220.0" fitWidth="250.0" layoutX="110.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../pictures/stack.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="250.0" layoutX="581.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../pictures/pizza.jpeg" />
+         </image>
+      </ImageView>
+      <Button layoutX="110.0" layoutY="481.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="288.0" text="Pay extra momey" />
+      <Button fx:id="button_next2" layoutX="581.0" layoutY="481.0" mnemonicParsing="false" onMouseClicked="#goto_next_3" prefHeight="36.0" prefWidth="288.0" text="NEXT" />
+      <Label alignment="CENTER" layoutX="122.0" layoutY="320.0" prefHeight="47.0" prefWidth="200.0" text="\$50" />
+      <Label alignment="CENTER" layoutX="581.0" layoutY="314.0" prefHeight="47.0" prefWidth="200.0" text="\$50" />
+      <CheckBox fx:id="steak" layoutX="183.0" layoutY="375.0" mnemonicParsing="false" text="steak" />
+      <CheckBox fx:id="pizza" layoutX="643.0" layoutY="375.0" mnemonicParsing="false" text="pizza" />
+   </children>
+</AnchorPane>

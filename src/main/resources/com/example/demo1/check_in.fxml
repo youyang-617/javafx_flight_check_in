@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@checkin.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.CheckInController">
+   <children>
+      <ImageView fitHeight="640.0" fitWidth="930.0" layoutX="15.0" layoutY="23.0" preserveRatio="true">
+         <image>
+            <Image url="@../../../pictures/airplane.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="293.0" layoutY="135.0" opacity="0.96" prefHeight="371.0" prefWidth="374.0" style="-fx-border-color: #45bbbf; -fx-background-color: white; -fx-border-radius: 5; -fx-border-width: 3;">
+         <children>
+            <Label alignment="CENTER" layoutX="118.0" layoutY="26.0" prefHeight="38.0" prefWidth="138.0" text="Check In" textFill="#45bbbf">
+               <font>
+                  <Font name="Verdana" size="30.0" />
+               </font>
+            </Label>
+            <Button fx:id="login" layoutX="138.0" layoutY="284.0" mnemonicParsing="false" onMouseClicked="#CheckIn" prefHeight="37.0" prefWidth="81.0" style="-fx-background-color: #45bbbf;" text="Log in" textAlignment="CENTER" textFill="WHITE" />
+            <TabPane layoutX="15.0" layoutY="98.0" prefHeight="144.0" prefWidth="344.0" style="-fx-border-width: 2; -fx-border-color: #45bbbf;" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="num_tab" closable="false" style="-fx-background-color-: #45bbbf;" text=" booking number">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Pane layoutX="11.0" layoutY="15.0" prefHeight="64.0" prefWidth="319.0">
+                                 <children>
+                                    <TextField fx:id="num_text" layoutX="52.0" layoutY="22.0" prefHeight="30.0" prefWidth="246.0" promptText=" booking number">
+                                       <font>
+                                          <Font name="Verdana" size="15.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fx:id="book_icon" fitHeight="30.0" fitWidth="24.0" layoutX="26.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../pictures/订单.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="id_tab" text="ID number">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Pane layoutX="11.0" prefHeight="56.0" prefWidth="319.0">
+                                 <children>
+                                    <TextField fx:id="familyName_text" layoutX="52.0" layoutY="22.0" prefHeight="30.0" prefWidth="246.0" promptText="Surname">
+                                       <font>
+                                          <Font name="Verdana" size="15.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fx:id="book_icon1" fitHeight="30.0" fitWidth="24.0" layoutX="26.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../pictures/身份证.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Pane layoutY="37.0" prefHeight="63.0" prefWidth="319.0">
+                                       <children>
+                                          <TextField fx:id="id_text" layoutX="52.0" layoutY="22.0" prefHeight="30.0" prefWidth="246.0" promptText="ID number">
+                                             <font>
+                                                <Font name="Verdana" size="15.0" />
+                                             </font>
+                                          </TextField>
+                                          <ImageView fx:id="book_icon11" fitHeight="30.0" fitWidth="24.0" layoutX="26.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../pictures/身份证.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="card_tab" styleClass="idcard" text="ID Card">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="90.0" fitWidth="144.0" layoutX="125.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../pictures/camera.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+      <ImageView fitHeight="90.0" fitWidth="240.0" layoutX="14.0" layoutY="14.0" opacity="0.77" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../pictures/logo.jpeg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

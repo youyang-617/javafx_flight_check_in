@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.PageController">
+    <children>
+        <Label alignment="CENTER" layoutX="10.0" layoutY="20.0" prefHeight="84.0" prefWidth="941.0" text="Please choose the food ">
+            <font>
+                <Font size="45.0" />
+            </font>
+        </Label>
+        <Button fx:id="button_next3" layoutX="631.0" layoutY="570.0" mnemonicParsing="false" onMouseClicked="#goto_next_2" prefHeight="36.0" prefWidth="285.0" text="NEXT" />
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="155.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="121.0">
+            <image>
+                <Image url="@../../../pictures/A.jpeg" />
+            </image></ImageView>
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="584.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="584.0" AnchorPane.rightAnchor="176.0" AnchorPane.topAnchor="121.0">
+            <image>
+                <Image url="@../../../pictures/B.jpeg" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="156.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="156.0" AnchorPane.topAnchor="345.0">
+            <image>
+                <Image url="@../../../pictures/C.jpeg" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="584.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="345.0">
+            <image>
+                <Image url="@../../../pictures/D.jpeg" />
+            </image>
+        </ImageView>
+      <RadioButton fx:id="mealA" layoutX="185.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#MakeChoice" text="set meal A" />
+      <RadioButton fx:id="mealC" layoutX="185.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#MakeChoice" text="set meal C" />
+      <RadioButton fx:id="mealB" layoutX="631.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#MakeChoice" text="set meal B" />
+      <RadioButton fx:id="mealD" layoutX="631.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#MakeChoice" text="set meal D" />
+      <Button fx:id="button_next1" layoutX="89.0" layoutY="570.0" mnemonicParsing="false" onMouseClicked="#goto_next_1" prefHeight="36.0" prefWidth="285.0" text="Confirmation" />
+    </children>
+</AnchorPane>

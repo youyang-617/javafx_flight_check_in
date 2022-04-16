@@ -1,0 +1,15 @@
+/** for tab pane **/
+.tab{
+-fx-background-color: #bce5e7;
+}
+.tab-header-background{
+-fx-background-color: white;
+}
+
+.idcard{
+-fx-pref-width:80;
+}
+
+.tab-pane .tab:selected{
+-fx-background-color: white;
+}

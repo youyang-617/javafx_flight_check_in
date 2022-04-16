@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.SeatController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0">
+         <top>
+            <AnchorPane prefHeight="88.0" prefWidth="834.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="325.0" layoutY="22.0" text="Choose Your Seat">
+                     <font>
+                        <Font name="System Bold" size="35.0" />
+                     </font>
+                  </Label>
+                  <Line endX="60.0" layoutX="390.0" layoutY="74.0" startX="-60.0" stroke="#515151" strokeWidth="5.0" />
+               </children>
+            </AnchorPane>
+         </top>
+         <bottom>
+            <AnchorPane prefHeight="243.0" prefWidth="960.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="previousButton" layoutX="607.0" layoutY="178.0" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: GRAY;" text="PREVIOUS" textFill="WHITE" />
+                  <Button fx:id="confirmButton" layoutX="778.0" layoutY="178.0" mnemonicParsing="false" onAction="#seatContinueClick" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: GRAY;" text="CONTINUE" textFill="WHITE" />
+                  <ChoiceBox fx:id="choose" layoutX="758.0" layoutY="41.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: gray;" />
+                  <Label fx:id="welcomeText" alignment="CENTER" layoutX="465.0" layoutY="107.0" textAlignment="CENTER" />
+                  <Label fx:id="flightChosen" contentDisplay="CENTER" layoutX="448.0" layoutY="115.0" text="You haven't chosen" textAlignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="c1" layoutX="114.0" layoutY="39.0" mnemonicParsing="false" onAction="#getSeat" text="C1">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="seat" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="c2" layoutX="221.0" layoutY="39.0" mnemonicParsing="false" onAction="#getSeat" text="C2" toggleGroup="$seat">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="c3" layoutX="324.0" layoutY="39.0" mnemonicParsing="false" onAction="#getSeat" text="C3" toggleGroup="$seat">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="c4" layoutX="431.0" layoutY="39.0" mnemonicParsing="false" onAction="#getSeat" text="C4" toggleGroup="$seat">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </RadioButton>
+                  <Label fx:id="flightChosen1" alignment="CENTER" contentDisplay="CENTER" layoutX="212.0" layoutY="115.0" text="You have chosen:" textAlignment="CENTER">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </bottom>
+         <right>
+            <AnchorPane prefHeight="290.0" prefWidth="947.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="seatsImage" fitHeight="181.0" fitWidth="942.0" layoutX="3.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../image/seat.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="346.0" layoutY="234.0" text="Schematic diagram of aircraft space" textFill="#000000ae">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>
