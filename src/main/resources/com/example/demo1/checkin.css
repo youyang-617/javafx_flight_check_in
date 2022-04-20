@@ -13,3 +13,12 @@
 .tab-pane .tab:selected{
 -fx-background-color: white;
 }
+
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.card{
+    -fx-background-color: #BAEAC3;
+    -fx-background-radius: 30;
+}
