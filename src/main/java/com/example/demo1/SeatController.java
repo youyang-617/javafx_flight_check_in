@@ -2,7 +2,9 @@ package com.example.demo1;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -16,12 +18,13 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class SeatController<Lable> implements Initializable {
+    public static String user_id;
     @FXML
     private Button previousButton;
     @FXML
     private Button confirmButton;
     @FXML
-    private Label flightChosen;
+    Label flightChosen;
     @FXML
     private ChoiceBox<String> choose;
 
@@ -54,6 +57,8 @@ public class SeatController<Lable> implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        System.out.println("it's meeeee"+user_id);
+
         SeatSelector seatSelector = new SeatSelector("BU1334");
         ArrayList<String> availableSeats = seatSelector.findRemainSeats();
         String[] testChoices = (String[]) availableSeats.toArray(new String[0]);

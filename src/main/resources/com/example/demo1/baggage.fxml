@@ -30,7 +30,7 @@
                      <children>
                         <VBox alignment="CENTER" prefHeight="53.0" prefWidth="298.0">
                            <children>
-                              <Label prefHeight="29.0" prefWidth="265.0" text="Please take your baggage labels" textFill="#878787">
+                              <Label fx:id="test" prefHeight="29.0" prefWidth="265.0" text="Please take your baggage labels" textFill="#878787">
                                  <font>
                                     <Font name="Cambria Bold" size="18.0" />
                                  </font>

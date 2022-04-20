@@ -3,6 +3,7 @@ package com.example.demo1;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
@@ -25,7 +26,7 @@ public class CheckInController implements Initializable {
     private Tab card_tab;
 
     @FXML
-    private TextField num_text;
+    TextField num_text;
 
     @FXML
     private TextField familyName_text;
@@ -59,7 +60,13 @@ public class CheckInController implements Initializable {
             }else{
                 System.out.println("so very wrong");
             }
-
+            setPageInfo(OrderNumber);
+            PageController controller = new PageController();
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("seat-view.fxml"));
+//            BaggageController control = new BaggageController();
+////            (SeatController) loader.getController();
+//            control.flightChosen.setText("look");
+            controller.change_page(login);
         }
         if (id_tab.isSelected()) {
 
@@ -84,8 +91,7 @@ public class CheckInController implements Initializable {
             System.out.println("ur photo");
         }
 
-        PageController controller = new PageController();
-        controller.change_page(login);
+
     }
 
 
@@ -110,6 +116,20 @@ public class CheckInController implements Initializable {
     //  thingy_to_put_error_text_which_is_a_text.setText("");
     }
 
+    public void setPageInfo(String OrderNumber){
+//        SeatController seat = new SeatController();
+//        PageController page = new PageController();
+//        BaggageController baggage = new BaggageController();
+//        StageManager.CONTROLLER.put("seat", seat);
+//        StageManager.CONTROLLER.put("page", page);
+//        StageManager.CONTROLLER.put("baggage",baggage);
+//        System.out.println(StageManager.CONTROLLER);
 
+//        SeatController seatControl=(SeatController) StageManager.CONTROLLER.get("seat");
+//        PageController pageControl=(PageController) StageManager.CONTROLLER.get("page");
+
+        SeatController.user_id =OrderNumber;
+        PageController.user_id=OrderNumber;
+    }
 
 }

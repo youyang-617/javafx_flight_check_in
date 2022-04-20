@@ -2,6 +2,7 @@ package com.example.demo1;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -11,10 +12,13 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.Flow;
 
 
 public class PageController {
+    public static String user_id;
     @FXML
     private Button button_next;
     @FXML
@@ -88,7 +92,7 @@ public class PageController {
         // to be continued.....
     }
 
-    public void change_page(Button b ) throws IOException{
+    public void change_page(Button b) throws IOException{
         Stage primaryStage=(Stage)b.getScene().getWindow();
         primaryStage.close();//to open the new wimdow, we need to close the old window
          NewPage(b);
@@ -115,19 +119,22 @@ public class PageController {
             path = "hello-view.fxml";
             title = "Information";
         }
-        else {
+        else if(b.getId().equals("button_upload")){
             path = "load_ID.fxml";
             title = "ID";
         }
-
+        else {
+            path = "baggage.fxml";
+            title = "baggage";
+        }
         AnchorPane root = FXMLLoader.load(PageApplication.class.getResource(path));
         //BorderPane root1 = FXMLLoader.load(PageApplication.class.getResource(path));
 
         Scene scene;
-
-
              scene = new Scene(root);
-
+//        Map<String, String> map = new HashMap<>();
+//        map.put("ID",user_id);
+//        scene.setUserData(map);
 
         Stage stage = new Stage();
         stage.setTitle(title);  //set the title

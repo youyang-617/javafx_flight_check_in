@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -17,6 +18,9 @@ public class BaggageController implements Initializable {
     public ScrollPane scroll;
     @FXML
     private GridPane grid;
+
+    @FXML
+    Label test;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
