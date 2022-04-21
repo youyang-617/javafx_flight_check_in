@@ -2,8 +2,6 @@
   <library name="sdk">
     <CLASSES />
     <JAVADOC />
-    <SOURCES>
-      <root url="file://$PROJECT_DIR$/../sdk" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

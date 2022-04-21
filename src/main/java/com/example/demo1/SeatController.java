@@ -92,6 +92,7 @@ public class SeatController<Lable> implements Initializable {
         }
         PageController controller = new PageController();
         controller.change_page(confirmButton);
+
     }
 
 

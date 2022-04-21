@@ -43,7 +43,8 @@ public class PageController {
     private CheckBox steak;
     @FXML
     private CheckBox pizza;
-
+    @FXML
+     Label name;
 
     @FXML
     protected void goto_next() throws IOException {
@@ -62,7 +63,7 @@ public class PageController {
 
     @FXML
     protected void goto_next_1() throws IOException {
-        Customer c = new Customer("100001");
+        Customer c = new Customer(user_id);
         if(mealA.isSelected()){
             c.ModifyMeal("A",c.search());
         }else if(mealB.isSelected()){
@@ -116,7 +117,7 @@ public class PageController {
             title = "Seat";
         }
         else if(b.getId().equals("confirmButton")){
-            path = "hello-view.fxml";
+            path = "information.fxml";
             title = "Information";
         }
         else if(b.getId().equals("button_upload")){
@@ -131,7 +132,8 @@ public class PageController {
         //BorderPane root1 = FXMLLoader.load(PageApplication.class.getResource(path));
 
         Scene scene;
-             scene = new Scene(root);
+        scene = new Scene(root);
+
 //        Map<String, String> map = new HashMap<>();
 //        map.put("ID",user_id);
 //        scene.setUserData(map);
@@ -139,7 +141,11 @@ public class PageController {
         Stage stage = new Stage();
         stage.setTitle(title);  //set the title
         stage.setScene(scene);
+
         stage.show();
+        if(path.equals("information.fxml")){
+            setValue();
+        }
     }
     @FXML
     public void MakeChoice(){
@@ -151,6 +157,12 @@ public class PageController {
 
     }
 
-
+    public void setValue(){
+        Customer c = new Customer("100001");
+        c.search();
+        System.out.println(c.lastName);
+        name = new Label(c.lastName);
+        name.setText(c.lastName);
+    }
 }
 
