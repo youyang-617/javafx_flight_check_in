@@ -14,12 +14,23 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
+import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+
 import java.util.concurrent.Flow;
 
 
 public class PageController {
     public static String user_id;
-    @FXML
+   @FXML
     private Button button_next;
     @FXML
     private Button button_next1;
@@ -44,7 +55,7 @@ public class PageController {
     @FXML
     private CheckBox pizza;
     @FXML
-     Label name;
+     Label name,flight;
 
     @FXML
     protected void goto_next() throws IOException {
@@ -59,6 +70,7 @@ public class PageController {
     @FXML
     protected void goto_next_2() throws IOException{
         change_page(button_next3);
+
     }
 
     @FXML
@@ -141,11 +153,13 @@ public class PageController {
         Stage stage = new Stage();
         stage.setTitle(title);  //set the title
         stage.setScene(scene);
-
         stage.show();
-        if(path.equals("information.fxml")){
-            setValue();
-        }
+       // if(path.equals("information.fxml")){
+         //   setValue();
+        //}
+
+
+
     }
     @FXML
     public void MakeChoice(){
@@ -158,11 +172,33 @@ public class PageController {
     }
 
     public void setValue(){
+
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation Dialog");
+            alert.setHeaderText("CONFIRMATION");
+            alert.setContentText("Do you want to print your ticket?");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK){
+                //name = new Label();
+               setValues();
+            } else {
+
+            }
+        //
+
+
+
+    }
+
+    public void setValues(){
         Customer c = new Customer("100001");
         c.search();
+        String names = c.firstName + " " + c.lastName;
+        name.setText(names);
+        flight.setText(c.flightNum);
         System.out.println(c.lastName);
-        name = new Label(c.lastName);
-        name.setText(c.lastName);
     }
 }
 
