@@ -82,21 +82,25 @@ public class PageController {
             c.ModifyMeal("B",c.search());
         }else if(mealC.isSelected()){
             c.ModifyMeal("C",c.search());
-        }else {
+        }else if(mealD.isSelected()){
             c.ModifyMeal("D",c.search());
+        }else{
+            c.ModifyMeal(" ",c.search());
         }
         change_page(button_next1); //go to the page upload_ID
     }
 
     @FXML
     protected void goto_next_3() throws IOException{ //还没做两个都选，没做退回，没做鲁邦
-        Customer c = new Customer("100001");
-        if(steak.isSelected()){
-            c.ModifyMeal("E",c.search());
-        }else if(pizza.isSelected()) {
+        Customer c = new Customer(user_id);
+        if(steak.isSelected() && pizza.isSelected()){
+            c.ModifyMeal("EF",c.search());
+        }else if(pizza.isSelected() && !(steak.isSelected())) {
             c.ModifyMeal("F", c.search());
-        }else{
-
+        }else if(!pizza.isSelected() && steak.isSelected()) {
+            c.ModifyMeal("E", c.search());}
+        else{
+            c.ModifyMeal(" ",c.search());
         }
         change_page(button_next2);
     }
@@ -193,7 +197,7 @@ public class PageController {
     }
 
     public void setValues(){
-        Customer c = new Customer("100001");
+        Customer c = new Customer(user_id);
         c.search();
         String names = c.firstName + " " + c.lastName;
         name.setText(names);
