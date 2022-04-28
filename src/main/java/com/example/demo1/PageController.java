@@ -58,8 +58,10 @@ public class PageController {
      Label name,flight;
 
     @FXML
+
     protected void goto_next() throws IOException {
-        change_page(button_next); //go to the page food
+        //go to the page food
+        change_page(button_next);
         Alert err = new Alert(Alert.AlertType.INFORMATION);
         err.setTitle("Information Dialog");
         err.setHeaderText(null);

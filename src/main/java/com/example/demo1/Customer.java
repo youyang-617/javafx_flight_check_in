@@ -23,7 +23,8 @@ public class Customer {
     String date;
     String gate;
     int line;//row number of customer info in csv
-    String filename = "src/main/resources/com/example/demo1/Customer_information.csv";//location of customer info
+    //location of customer info
+    String filename = "src/main/resources/com/example/demo1/Customer_information.csv";
 
     public Customer(String bookingNum) {
 
