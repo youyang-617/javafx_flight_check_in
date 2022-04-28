@@ -26,7 +26,21 @@
                   </Label>
                </children>
             </HBox>
-            <HBox prefHeight="59.0" prefWidth="350.0">
+            <HBox prefHeight="44.0" prefWidth="350.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="59.0" prefWidth="178.0" text="    Name:" textAlignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="name" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="59.0" prefWidth="247.0" text="hi" textAlignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="44.0" prefWidth="350.0">
                <children>
                   <Label alignment="CENTER" prefHeight="59.0" prefWidth="178.0" text="    Flight:" textAlignment="CENTER">
                      <font>
@@ -40,7 +54,7 @@
                   </Label>
                </children>
             </HBox>
-            <HBox prefHeight="57.0" prefWidth="350.0">
+            <HBox prefHeight="12.0" prefWidth="350.0">
                <children>
                   <Label alignment="CENTER" prefHeight="57.0" prefWidth="182.0" text="    From:" textAlignment="CENTER">
                      <font>
@@ -54,7 +68,7 @@
                   </Label>
                </children>
             </HBox>
-            <HBox prefHeight="53.0" prefWidth="350.0">
+            <HBox prefHeight="37.0" prefWidth="350.0">
                <children>
                   <Label alignment="CENTER" prefHeight="53.0" prefWidth="184.0" text="   To:" textAlignment="CENTER">
                      <font>

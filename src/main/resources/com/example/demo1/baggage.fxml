@@ -21,11 +21,11 @@
                 <Image url="@../../../pictures/logo.jpeg" />
             </image>
         </ImageView>
-      <VBox layoutX="103.0" layoutY="87.0" prefHeight="529.0" prefWidth="755.0">
+      <VBox layoutX="103.0" layoutY="37.0" prefHeight="579.0" prefWidth="755.0">
          <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox prefHeight="71.0" prefWidth="715.0">
                <children>
-                  <Pane prefHeight="65.0" prefWidth="183.0" />
+                  <Pane prefHeight="50.0" prefWidth="196.0" />
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="336.0" styleClass="card" stylesheets="@checkin.css">
                      <children>
                         <VBox alignment="CENTER" prefHeight="53.0" prefWidth="298.0">

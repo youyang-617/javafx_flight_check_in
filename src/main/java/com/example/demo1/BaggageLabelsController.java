@@ -18,9 +18,13 @@ public class BaggageLabelsController {
     @FXML
     private Label to;
 
+    @FXML
+    private Label name;
 
-    public void setData(int i,String flt,String dep,String des) {
-        count.setText(String.valueOf(i));
+
+    public void setData(int i,String Name,String flt,String dep,String des) {
+        count.setText(String.valueOf(i+1));
+        name.setText(Name);
         flight.setText(flt);
         from.setText(dep);
         to.setText(des);

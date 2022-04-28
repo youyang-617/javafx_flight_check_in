@@ -44,7 +44,7 @@ public class BaggageController implements Initializable {
                 AnchorPane anchorPane = fxmlLoader.load();
 
                 BaggageLabelsController BaggageLabelsController = fxmlLoader.getController();
-                BaggageLabelsController.setData(i,search[3],search[10],search[11]);
+                BaggageLabelsController.setData(i,search[0]+" "+search[1],search[3],search[10],search[11]);
 
                 if (column == 2) {
                     column = 0;
