@@ -45,6 +45,7 @@ public class CheckInController implements Initializable {
 
     @FXML
     private void CheckIn() throws IOException {
+        // choose to log in with ID number
         if (num_tab.isSelected()) {
             String OrderNumber = num_text.getText();
 
@@ -116,6 +117,7 @@ public class CheckInController implements Initializable {
     //  thingy_to_put_error_text_which_is_a_text.setText("");
     }
 
+    // paa the id number to all pages
     public void setPageInfo(String OrderNumber){
 //        SeatController seat = new SeatController();
 //        PageController page = new PageController();
@@ -130,6 +132,8 @@ public class CheckInController implements Initializable {
 
         SeatController.user_id =OrderNumber;
         PageController.user_id=OrderNumber;
+        BaggageController.user_id=OrderNumber;
+        BaggageLabelsController.user_id=OrderNumber;
     }
 
 }

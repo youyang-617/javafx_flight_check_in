@@ -15,6 +15,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class BaggageController implements Initializable {
+    public static String user_id;
     public ScrollPane scroll;
     @FXML
     private GridPane grid;
@@ -29,17 +30,21 @@ public class BaggageController implements Initializable {
 //        if (fruits.size() > 0) {
 //            setChosenFruit(fruits.get(0));
 //        }
+
+        Customer client = new Customer(user_id);
+        String[] search = client.search();
+
         int column = 0;
         int row = 1;
         try {
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < Integer.parseInt(search[9]) ; i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("baggage_labels.fxml"));
 
                 AnchorPane anchorPane = fxmlLoader.load();
 
                 BaggageLabelsController BaggageLabelsController = fxmlLoader.getController();
-                //BaggageLabelsController.setData(fruits.get(i),myListener);
+                BaggageLabelsController.setData(i,search[3],search[10],search[11]);
 
                 if (column == 2) {
                     column = 0;

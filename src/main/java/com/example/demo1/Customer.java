@@ -1,8 +1,6 @@
 package com.example.demo1;
 
-import javax.imageio.IIOException;
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 
 /**
  * 保存了对乘客的操作包括对应客户信息搜索，修改餐食与座位号信息
@@ -18,11 +16,15 @@ public class Customer {
     String bookingNum;
     String seatNum;
     String typeOfMeal;//standard or halal
+    String carryOnPkgNum;
+    String checkInPkgNum;
+    String departure;
+    String destination;
+    String date;
+    String gate;
     int line;//row number of customer info in csv
-    //String filename = "C:\\Users\\1\\IdeaProjects\\Iteration1\\src\\main\\java\\com\\example\\demo1\\Customer_information.csv";
-    // location of customer info
-    String filename = "src/main/java/com/example/demo1/Customer_information.csv";
-    //src/main/resources/com/example/real_check_in/Customer_information.csv
+    String filename = "src/main/resources/com/example/demo1/Customer_information.csv";//location of customer info
+
     public Customer(String bookingNum) {
 
         this.bookingNum = bookingNum;
@@ -47,7 +49,6 @@ public class Customer {
         try {
             fileReader = new FileReader(filename);
         } catch (FileNotFoundException e) {
-            System.out.println("chuxianlyixhang");
             e.printStackTrace();
         }
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -74,7 +75,13 @@ public class Customer {
                     this.bookingNum = customerInformation[5];
                     this.seatNum = customerInformation[6];
                     this.typeOfMeal = customerInformation[7];
-                    System.out.println("This is "+this.lastName+" "+ this.firstName);//测试代码，真用的时候删了就行
+                    this.carryOnPkgNum = customerInformation[8];
+                    this.checkInPkgNum = customerInformation[9];
+                    this.departure=customerInformation[10];
+                    this.destination=customerInformation[11];
+                    this.date=customerInformation[12];
+                    this.gate=customerInformation[13];
+                    System.out.println("This is "+this.lastName+" "+ this.firstName + ". S/He has "+this.carryOnPkgNum+" carry on package and "+this.checkInPkgNum+" check-in package.");//测试代码，真用的时候删了就行
                 }
                 line++;
             }
@@ -92,10 +99,11 @@ public class Customer {
     /**
      * 参数：前端传入的餐食种类，以及利用search方法返回的乘客信息字符串数组（对象.search）
      * 该方法可以更改该旅客餐食信息
-     * @return 空
+     * @return 餐食所需费用
      */
-    public void ModifyMeal(String typeOfMeal,String[] customerInfo){
+    public int ModifyMeal(String typeOfMeal,String[] customerInfo){
         //this.line=line;
+        int extrafee=0;//extrafee for meal
         try {
             String tempFile = "temp.csv";
             //清空临时文件，免得往后写
@@ -125,6 +133,15 @@ public class Customer {
                         //否则替换
                         else {
                             in_w.write(typeOfMeal);
+                            if (typeOfMeal.equals("a")||typeOfMeal.equals("b")||typeOfMeal.equals("c")||typeOfMeal.equals("d"))
+                            {
+                                extrafee=0;
+                            }
+                            if (typeOfMeal.equals("e")||typeOfMeal.equals("f"))
+                            {
+                                extrafee=50;
+                            }
+
                         }
                         //每个单词粘贴完后添加逗号
                         if(i!=length-1){
@@ -149,15 +166,15 @@ public class Customer {
             FileOperation.copyFileUsingStream(temp, information);
         }
         catch (IOException e) {
-            System.out.println("不行啊");
             System.out.println("exception occurred"+ e);
         }
+
+        return extrafee;
 
     }
     /**
      * 参数：前端传入的座位号，以及利用search方法返回的乘客信息字符串数组（对象.search）
      * 该方法可以更改该旅客座位信息
-     * @return 空
      */
     public void ModifySeatNum(String SeatNum,String[] customerInfo){
         //this.line=line;

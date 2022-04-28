@@ -19,7 +19,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="59.0" prefWidth="183.0" text="1" textAlignment="CENTER">
+                  <Label fx:id="count" prefHeight="59.0" prefWidth="183.0" text="1" textAlignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font>
