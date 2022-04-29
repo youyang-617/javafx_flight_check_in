@@ -37,7 +37,7 @@
 
             <Label prefHeight="66.0" prefWidth="202.0" text="DESTINATION" />
             <Label prefHeight="62.0" prefWidth="202.0" text="NAME" GridPane.rowIndex="1" />
-            <Label fx:id="destination" prefWidth="201.0" text="1" GridPane.columnIndex="1" />
+            <Label fx:id="destination" prefWidth="201.0" text="" GridPane.columnIndex="1" />
             <Label fx:id="name" prefHeight="66.0" prefWidth="201.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label prefHeight="56.0" prefWidth="202.0" text="FLIGHT" GridPane.rowIndex="2" />
             <Label fx:id="flight" prefWidth="201.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
@@ -47,8 +47,8 @@
          <children>
             <Label prefHeight="66.0" prefWidth="202.0" text="DATE" />
             <Label prefHeight="62.0" prefWidth="202.0" text="GATE" GridPane.rowIndex="1" />
-            <Label prefHeight="65.0" prefWidth="201.0" text="3" GridPane.columnIndex="1" />
-            <Label prefHeight="66.0" prefWidth="201.0" text="4" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="date" prefWidth="201.0" text="" GridPane.columnIndex="1" />
+            <Label fx:id="gate" prefWidth="201.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
