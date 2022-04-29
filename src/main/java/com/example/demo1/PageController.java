@@ -55,7 +55,7 @@ public class PageController {
     @FXML
     private CheckBox pizza;
     @FXML
-     Label name,flight;
+     Label name,flight,destination,date,gate;
 
     @FXML
 
@@ -204,6 +204,9 @@ public class PageController {
         String names = c.firstName + " " + c.lastName;
         name.setText(names);
         flight.setText(c.flightNum);
+        destination.setText(c.destination);
+        date.setText(c.date);
+        gate.setText(c.gate);
         System.out.println(c.lastName);
     }
 }
