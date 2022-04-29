@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -58,9 +59,14 @@ public class SeatController<Lable> implements Initializable {
 
         SeatSelector seatSelector = new SeatSelector("BU1334");
         ArrayList<String> availableSeats = seatSelector.findRemainSeats();
-        String[] testChoices = (String[]) availableSeats.toArray(new String[0]);
+//        String[] testChoices = (String[]) availableSeats.toArray(new String[0]);
+        String testChoices = "";
+        choose.setTooltip(new Tooltip("Choose your seat"));
+
+
         //add test choices to the choice box
-        choose.getItems().addAll(testChoices);
+        choose.getItems().add(testChoices);
+//        choose.getItems().addAll(testChoices);
         //display the value selected
         choose.setOnAction(this::getChoice);
     }
@@ -100,8 +106,25 @@ public class SeatController<Lable> implements Initializable {
         String choice = null;
         if (c1.isSelected()) {
             choice = "C1";
+            //怎么把这个航班作为变量传过来啊
+            SeatSelector seatSelector = new SeatSelector("BU1334");
+            ArrayList<String> availableSeats = seatSelector.findLargeSeats();
+            String[] testChoices = (String[]) availableSeats.toArray(new String[0]);
+            //add test choices to the choice box
+
+            choose.getItems().addAll(testChoices);
+            //display the value selected
+            choose.setOnAction(this::getChoice);
         } else if (c2.isSelected()) {
             choice = "C2";
+            //怎么把这个航班作为变量传过来啊
+            SeatSelector seatSelector = new SeatSelector("BU1334");
+            ArrayList<String> availableSeats = seatSelector.findNormalSeats();
+            String[] testChoices = (String[]) availableSeats.toArray(new String[0]);
+            //add test choices to the choice box
+            choose.getItems().addAll(testChoices);
+            //display the value selected
+            choose.setOnAction(this::getChoice);
         } else if (c3.isSelected()) {
             choice = "C3";
         } else if (c4.isSelected()) {

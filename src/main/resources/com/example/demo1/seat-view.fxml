@@ -13,8 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Button?>
 
-
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.SeatController">
+<AnchorPane stylesheets="@ChoiceBox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.SeatController">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0">
          <top>
@@ -34,14 +33,14 @@
                <children>
                   <Button fx:id="previousButton" layoutX="607.0" layoutY="178.0" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: GRAY;" text="PREVIOUS" textFill="WHITE" />
                   <Button fx:id="confirmButton" layoutX="778.0" layoutY="178.0" mnemonicParsing="false" onAction="#seatContinueClick" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: GRAY;" text="CONTINUE" textFill="WHITE" />
-                  <ChoiceBox fx:id="choose" layoutX="758.0" layoutY="41.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: gray;" />
+                  <ChoiceBox id="choose" fx:id="choose" layoutX="758.0" layoutY="41.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: gray;" />
                   <Label fx:id="welcomeText" alignment="CENTER" layoutX="465.0" layoutY="107.0" textAlignment="CENTER" />
                   <Label fx:id="flightChosen" contentDisplay="CENTER" layoutX="448.0" layoutY="115.0" text="You haven't chosen" textAlignment="CENTER">
                      <font>
                         <Font size="25.0" />
                      </font>
                   </Label>
-                  <RadioButton fx:id="c1" layoutX="114.0" layoutY="39.0" mnemonicParsing="false" onAction="#getSeat" text="C1">
+                  <RadioButton fx:id="c1" layoutX="114.0" layoutY="39.0" mnemonicParsing="false" onAction="#getSeat" text="LARGE">
                      <font>
                         <Font size="22.0" />
                      </font>
@@ -49,12 +48,12 @@
                         <ToggleGroup fx:id="seat" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="c2" layoutX="221.0" layoutY="39.0" mnemonicParsing="false" onAction="#getSeat" text="C2" toggleGroup="$seat">
+                  <RadioButton fx:id="c2" layoutX="238.0" layoutY="39.0" mnemonicParsing="false" onAction="#getSeat" text="ALL" toggleGroup="$seat">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton fx:id="c3" layoutX="324.0" layoutY="39.0" mnemonicParsing="false" onAction="#getSeat" text="C3" toggleGroup="$seat">
+                  <RadioButton fx:id="c3" layoutX="344.0" layoutY="39.0" mnemonicParsing="false" onAction="#getSeat" text="C3" toggleGroup="$seat">
                      <font>
                         <Font size="22.0" />
                      </font>
