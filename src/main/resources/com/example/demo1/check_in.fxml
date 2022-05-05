@@ -28,13 +28,13 @@
                </font>
             </Label>
             <Button fx:id="login" layoutX="138.0" layoutY="284.0" mnemonicParsing="false" onMouseClicked="#CheckIn" prefHeight="37.0" prefWidth="81.0" style="-fx-background-color: #45bbbf;" text="Log in" textAlignment="CENTER" textFill="WHITE" />
-            <TabPane layoutX="15.0" layoutY="98.0" prefHeight="144.0" prefWidth="344.0" style="-fx-border-width: 2; -fx-border-color: #45bbbf;" tabClosingPolicy="UNAVAILABLE">
+            <TabPane layoutX="15.0" layoutY="98.0" prefHeight="171.0" prefWidth="344.0" style="-fx-border-width: 2; -fx-border-color: #45bbbf;" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                 <Tab fx:id="num_tab" closable="false" style="-fx-background-color-: #45bbbf;" text=" booking number">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <Pane layoutX="11.0" layoutY="15.0" prefHeight="64.0" prefWidth="319.0">
+                              <Pane layoutX="11.0" layoutY="16.0" prefHeight="64.0" prefWidth="319.0">
                                  <children>
                                     <TextField fx:id="num_text" layoutX="52.0" layoutY="22.0" prefHeight="30.0" prefWidth="246.0" promptText=" booking number">
                                        <font>
@@ -48,6 +48,7 @@
                                     </ImageView>
                                  </children>
                               </Pane>
+                              <Label fx:id="num_label" alignment="CENTER" layoutX="14.0" layoutY="4.0" prefHeight="20.0" prefWidth="313.0" textFill="#ff3636" />
                            </children>
                         </AnchorPane>
                   </content>
@@ -56,7 +57,8 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <Pane layoutX="11.0" prefHeight="56.0" prefWidth="319.0">
+                              <Label fx:id="fam_label" alignment="CENTER" prefHeight="23.0" prefWidth="344.0" textFill="#ff3636" />
+                              <Pane layoutX="13.0" layoutY="12.0" prefHeight="90.0" prefWidth="319.0">
                                  <children>
                                     <TextField fx:id="familyName_text" layoutX="52.0" layoutY="22.0" prefHeight="30.0" prefWidth="246.0" promptText="Surname">
                                        <font>
@@ -92,7 +94,7 @@
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <ImageView fitHeight="90.0" fitWidth="144.0" layoutX="125.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="90.0" fitWidth="144.0" layoutX="125.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../pictures/camera.png" />
                                  </image>

@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 
@@ -37,6 +38,13 @@ public class CheckInController implements Initializable {
     @FXML
     private Button login;
 
+    @FXML
+    private Label num_label;
+
+    @FXML
+    private Label fam_label;
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         initTexts();
@@ -62,10 +70,12 @@ public class CheckInController implements Initializable {
                     PageController controller = new PageController();
                     controller.change_page(login);
                 }else{
+                    num_label.setText("no user found");
                     System.out.println("查无此人!!!!!");
                 }
             }else{
-                System.out.println("格式错了");
+                num_label.setText("wrong patten(should be 6 digits)");
+                System.out.println("wrong patten(should be 6 digits)");
             }
 
         }
@@ -85,9 +95,11 @@ public class CheckInController implements Initializable {
                     PageController controller = new PageController();
                     controller.change_page(login);
                 }else{
+                    fam_label.setText("no user found");
                     System.out.println("wrong!!!!!");
                 }
             }else{
+                fam_label.setText("incorrect Family name or ID");
                 System.out.println("so very wrong");
             }
 
