@@ -42,7 +42,9 @@ public class CheckInController implements Initializable {
         initTexts();
 
     }
-
+    /**
+     * for log in
+     **/
     @FXML
     private void CheckIn() throws IOException {
         // choose to log in with ID number
@@ -55,19 +57,17 @@ public class CheckInController implements Initializable {
                 String[] search = client.search();
                 if(!"False".equals(search[0])){
                     System.out.println(search[0]);
+                    // successfully log in
+                    setPageInfo(OrderNumber);
+                    PageController controller = new PageController();
+                    controller.change_page(login);
                 }else{
-                    System.out.println("wrong!!!!!");
+                    System.out.println("查无此人!!!!!");
                 }
             }else{
-                System.out.println("so very wrong");
+                System.out.println("格式错了");
             }
-            setPageInfo(OrderNumber);
-            PageController controller = new PageController();
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("seat-view.fxml"));
-//            BaggageController control = new BaggageController();
-////            (SeatController) loader.getController();
-//            control.flightChosen.setText("look");
-            controller.change_page(login);
+
         }
         if (id_tab.isSelected()) {
 
@@ -79,7 +79,11 @@ public class CheckInController implements Initializable {
                 Customer client = new Customer(familyName, idNum);
                 String[] search = client.search();
                 if(!"False".equals(search[0])){
-                    System.out.println(search[0]);
+                    System.out.println(search[5]);
+                    // successfully log in
+                    setPageInfo(search[5]);
+                    PageController controller = new PageController();
+                    controller.change_page(login);
                 }else{
                     System.out.println("wrong!!!!!");
                 }
@@ -90,6 +94,9 @@ public class CheckInController implements Initializable {
         }
         if (card_tab.isSelected()) {
             System.out.println("ur photo");
+            setPageInfo("100001");
+            PageController controller = new PageController();
+            controller.change_page(login);
         }
 
 

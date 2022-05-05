@@ -16,21 +16,21 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@checkin.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.BaggageController">
     <children>
-        <ImageView fitHeight="90.0" fitWidth="240.0" layoutX="14.0" layoutY="14.0" opacity="0.77" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="58.0" fitWidth="155.0" layoutX="14.0" opacity="0.77" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../pictures/logo.jpeg" />
             </image>
         </ImageView>
-      <VBox layoutX="103.0" layoutY="37.0" prefHeight="579.0" prefWidth="755.0">
+      <VBox layoutX="103.0" layoutY="37.0" prefHeight="348.0" prefWidth="755.0">
          <children>
-            <HBox prefHeight="71.0" prefWidth="715.0">
+            <HBox prefHeight="106.0" prefWidth="715.0">
                <children>
                   <Pane prefHeight="50.0" prefWidth="196.0" />
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="336.0" styleClass="card" stylesheets="@checkin.css">
+                  <HBox alignment="CENTER" prefHeight="58.0" prefWidth="739.0" styleClass="card" stylesheets="@checkin.css">
                      <children>
-                        <VBox alignment="CENTER" prefHeight="53.0" prefWidth="298.0">
+                        <VBox alignment="CENTER" prefHeight="38.0" prefWidth="605.0">
                            <children>
-                              <Label fx:id="test" prefHeight="29.0" prefWidth="265.0" text="Please take your baggage labels" textFill="#878787">
+                              <Label fx:id="test" prefHeight="29.0" prefWidth="592.0" text="Please stick the tags onto your baggages and go to the assigned counter">
                                  <font>
                                     <Font name="Cambria Bold" size="18.0" />
                                  </font>
@@ -39,15 +39,15 @@
                         </VBox>
                      </children>
                   </HBox>
-                  <Pane prefHeight="65.0" prefWidth="214.0" />
+                  <Pane prefHeight="53.0" prefWidth="181.0" />
                </children>
                <VBox.margin>
                   <Insets left="20.0" right="20.0" top="10.0" />
                </VBox.margin>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="360.0" prefWidth="755.0" VBox.vgrow="ALWAYS">
+            <HBox alignment="CENTER" prefHeight="332.0" prefWidth="755.0" VBox.vgrow="ALWAYS">
                <children>
-                  <ScrollPane fx:id="scroll" prefHeight="570.0" prefWidth="785.0" styleClass="transparent" stylesheets="@checkin.css">
+                  <ScrollPane fx:id="scroll" prefHeight="253.0" prefWidth="600.0" styleClass="transparent" stylesheets="@checkin.css">
                      <content>
                         <GridPane fx:id="grid" prefHeight="0.0" prefWidth="0.0">
                            <rowConstraints>
@@ -61,30 +61,29 @@
                   </ScrollPane>
                </children>
             </HBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="75.0" prefWidth="349.0" text="bag drop counter:" textFill="#5ec5c5">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
-                        <Label contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="75.0" prefWidth="263.0" text="     12" textFill="#5ec5c5">
-                           <font>
-                              <Font size="34.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <Label alignment="TOP_CENTER" prefHeight="103.0" prefWidth="766.0" text="Please stick your labels onto your baggages and go to the counter" textFill="#5ec5c5">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
          </children>
       </VBox>
+      <Pane layoutX="367.0" layoutY="394.0" prefHeight="105.0" prefWidth="221.0" style="-fx-border-color: #5ec5c5; -fx-border-width: 2px;">
+         <children>
+            <Label fx:id="test1" layoutX="67.0" layoutY="50.0" prefHeight="36.0" prefWidth="94.0" text="No.12">
+               <font>
+                  <Font name="Cambria Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="test2" layoutX="21.0" layoutY="14.0" prefHeight="29.0" prefWidth="187.0" text=" bag drop counter:">
+               <font>
+                  <Font name="Cambria Bold" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button fx:id="goback" layoutX="244.0" layoutY="532.0" mnemonicParsing="false" onMouseClicked="#GoBack" prefHeight="45.0" prefWidth="162.0" style="-fx-background-color: #45bbbf;" text="Go Back" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
+      <Button fx:id="finish" layoutX="549.0" layoutY="532.0" mnemonicParsing="false" onMouseClicked="#Finish" prefHeight="45.0" prefWidth="162.0" style="-fx-background-color: #45bbbf;" text="Finish" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
     </children>
 </AnchorPane>

@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
@@ -19,6 +20,10 @@ public class BaggageController implements Initializable {
     public ScrollPane scroll;
     @FXML
     private GridPane grid;
+    @FXML
+    private Button goback;
+    @FXML
+    private Button finish;
 
     @FXML
     Label test;
@@ -68,5 +73,16 @@ public class BaggageController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void GoBack() throws IOException {
+        PageController controller = new PageController();
+        controller.change_page(goback);
+
+    }
+    @FXML
+    private void Finish() throws IOException {
+    }
+
 
 }

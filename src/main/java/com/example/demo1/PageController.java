@@ -125,7 +125,8 @@ public class PageController {
             path = "food.fxml";
             title = "food";
 
-        }else if(b.getId().equals("button_next3")){
+        }
+        else if(b.getId().equals("button_next3")){
             path = "expensive_food.fxml";
             title = "food";
 
@@ -142,9 +143,20 @@ public class PageController {
             path = "load_ID.fxml";
             title = "ID";
         }
-        else {
+        else if (b.getId().equals("button_next2")){
             path = "baggage.fxml";
             title = "baggage";
+        }
+        //actions to go back to the previous page
+        else if(b.getId().equals("goback")){
+            path = "expensive_food.fxml";
+            title = "food";
+
+        }
+        else{
+            path = "";
+            title = "";
+
         }
         AnchorPane root = FXMLLoader.load(PageApplication.class.getResource(path));
         //BorderPane root1 = FXMLLoader.load(PageApplication.class.getResource(path));
