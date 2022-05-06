@@ -1,10 +1,14 @@
 package com.example.demo1;
 
 import java.io.*;
+import java.util.Arrays;
 
 /**
- * 保存了对乘客的操作包括对应客户信息搜索，修改餐食与座位号信息
- *csv中从左到右依次是：用户的名，用户的姓，id号，航班号，性别，booking number，座位号，餐食
+ * Saved the operation of passengers
+ * including searching corresponding customer information
+ * modifying meal and seat number information
+ * In csv,from left to right： firstName,lastName,idNum,flightNum,gender,bookingNum,seatNum,typeOfMeal
+ * carryOnPkgNum,checkInPkgNum,departure,destination,date,gate
  */
 public class Customer {
 
@@ -22,7 +26,8 @@ public class Customer {
     String destination;
     String date;
     String gate;
-    int line;//row number of customer info in csv
+    //row number of customer info in csv
+    int line;
     //location of customer info
     String filename = "src/main/resources/com/example/demo1/Customer_information.csv";
 
@@ -38,13 +43,14 @@ public class Customer {
     }
 
     /**
-     * 这个方法是通过订单号或id number&last name查询旅客信息
-     * 该方法可以将该旅客的所有信息全部缓存到对象中
-     * @return 查找成功返回保存该客户信息的数组
+     * This method is to query the passenger information through the order number or ID number &amp; last name
+     * This method can cache all the information of the passenger into the object
+     * @return If the search is successful, return the array that saves the customer information
      */
     public String[] search(){
         line = 0;
         String[] customerInformation = new String[0];
+        String[] wrongCustomer = new String[]{"False"};
         FileReader fileReader = null;
 
         try {
@@ -53,22 +59,26 @@ public class Customer {
             e.printStackTrace();
         }
         BufferedReader bufferedReader = new BufferedReader(fileReader);
-        int check = 0;//查询状态判断符，0是没搜到，1是搜完了没找到，2是找成功了
+        //Query status identifier,0 is not found, 1 is not found after searching, and 2 is found successfully
+        int check = 0;
         while(check == 0){
-            String oneLine = null;//初始化一个字符串存放每一行的信息
+            String oneLine = null;
             try {
                 oneLine = bufferedReader.readLine();
             } catch (IOException e) {
                 e.printStackTrace();
             }
             if(oneLine == null){
-                check = 1;//找完了找不到
+                //not found after searching
+                check = 1;
                 System.out.println("Passenger not found");
             }else{
-                customerInformation = oneLine.split(",");//把字符串通过逗号分开并检查是否为所查询信息
+                //Separate the strings by commas and check whether they are the information queried
+                customerInformation = oneLine.split(",");
                 if(customerInformation[5].equals(this.bookingNum)||(customerInformation[2].equals(this.idNum)&&customerInformation[1].equals(this.lastName))){
                     check = 2;
-                    this.firstName = customerInformation[0];//将该用户数据存入对象
+                    //Store the user data into the object
+                    this.firstName = customerInformation[0];
                     this.lastName = customerInformation[1];
                     this.idNum = customerInformation[2];
                     this.flightNum = customerInformation[3];
@@ -93,45 +103,45 @@ public class Customer {
             return customerInformation;
         }
         else{
-            return new String[]{"False"};
+            return wrongCustomer;
         }
 
     }
     /**
-     * 参数：前端传入的餐食种类，以及利用search方法返回的乘客信息字符串数组（对象.search）
-     * 该方法可以更改该旅客餐食信息
-     * @return 餐食所需费用
+     * This method can change the meal information of the passenger
+     * @param typeOfMeal Types of meals imported from the front end
+     * @param customerInfo Passenger information string array returned by search method
+     * @return Cost of meals
      */
     public int ModifyMeal(String typeOfMeal,String[] customerInfo){
-        //this.line=line;
-        int extrafee=0;//extrafee for meal
+        //extra fee for meal
+        int extrafee=0;
         try {
-            String tempFile = "temp.csv";
-            //清空临时文件，免得往后写
+            String tempFile = "src/main/resources/com/example/demo1/temp.csv";
+            //Empty temporary files to avoid writing later
             FileOperation.clearFile(tempFile);
 
-            //打开要读取的file和要写入的temp
+            //Open the file to read and the temp to write
             File information = new File(filename);
             File temp = new File(tempFile);
             BufferedReader in = new BufferedReader(new FileReader(information));
             BufferedWriter in_w = new BufferedWriter(new FileWriter(temp));
             String str;
-            //计数器，计算当前行数
+            //Counter to calculate the current number of rows
             int countline=1;
-            //方便你未来直接抽象出来修改其他的
             int meal = 7;
             while ((str = in.readLine()) != null) {
-                //当找到所需修改的行
+                //When the row to be modified is found
                 if (countline == line) {
-                    //string数组长度，方便遍历
+                    //String array length, easy to traverse
                     int length =customerInfo.length;
-                    //遍历数组来粘贴
+                    //Traverse the array to paste
                     for (int i=0;i<length;i++){
-                        //当不是要修改的，直接粘贴
+                        //When it is not to be modified, paste it directly
                         if (i!=meal){
                             in_w.write(customerInfo[i]);
                         }
-                        //否则替换
+                        //Otherwise replace
                         else {
                             in_w.write(typeOfMeal);
                             if (typeOfMeal.equals("a")||typeOfMeal.equals("b")||typeOfMeal.equals("c")||typeOfMeal.equals("d"))
@@ -144,20 +154,20 @@ public class Customer {
                             }
 
                         }
-                        //每个单词粘贴完后添加逗号
+                        //Add a comma after pasting each word
                         if(i!=length-1){
                             in_w.write(",");
                         }
                     }
-                    //本行结束
+                    //End of the row
                     in_w.write("\n");
                 }
-                //当不是要更改的行
+                //When not the row to change
                 else {
                     in_w.write(str);
                     in_w.write("\n");
                 }
-                //下一行
+                //next row
                 countline++;
             }
             in.close();
@@ -174,55 +184,56 @@ public class Customer {
 
     }
     /**
-     * 参数：前端传入的座位号，以及利用search方法返回的乘客信息字符串数组（对象.search）
-     * 该方法可以更改该旅客座位信息
+     * This method can change the seat information of the passenger
+     * @param SeatNum Types of meals imported from the front end
+     * @param customerInfo Passenger information string array returned by search method
      */
     public void ModifySeatNum(String SeatNum,String[] customerInfo){
         //this.line=line;
         try {
-            String tempFile = "temp.csv";
-            //清空临时文件，免得往后写
+            String tempFile = "src/main/resources/com/example/demo1/temp.csv";
+            //Empty temporary files to avoid writing later
             FileOperation.clearFile(tempFile);
 
-            //打开要读取的file和要写入的temp
+            //Open the file to read and the temp to write
             File information = new File(filename);
             File temp = new File(tempFile);
             BufferedReader in = new BufferedReader(new FileReader(information));
             BufferedWriter in_w = new BufferedWriter(new FileWriter(temp));
             String str;
-            //计数器，计算当前行数
+            //Counter to calculate the current number of rows
             int countline=1;
-            //方便你未来直接抽象出来修改其他的
-            int seat = 6;//在文件中的位置
+            //Location in file
+            int seat = 6;
             while ((str = in.readLine()) != null) {
-                //当找到所需修改的行
+                //When the row to be modified is found
                 if (countline == line) {
-                    //string数组长度，方便遍历
+                    //String array length, easy to traverse
                     int length =customerInfo.length;
-                    //遍历数组来粘贴
+                    //Traverse the array to paste
                     for (int i=0;i<length;i++){
-                        //当不是要修改的，直接粘贴
+                        //When it is not to be modified, paste it directly
                         if (i!=seat){
                             in_w.write(customerInfo[i]);
                         }
-                        //否则替换
+                        //Otherwise replace
                         else {
                             in_w.write(SeatNum);
                         }
-                        //每个单词粘贴完后添加逗号
+                        //Add a comma after pasting each word
                         if(i!=length-1){
                             in_w.write(",");
                         }
                     }
-                    //本行结束
+                    //End of the row
                     in_w.write("\n");
                 }
-                //当不是要更改的行
+                //When not the row to change
                 else {
                     in_w.write(str);
                     in_w.write("\n");
                 }
-                //下一行
+                //next row
                 countline++;
             }
             in.close();

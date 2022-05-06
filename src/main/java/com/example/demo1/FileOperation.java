@@ -2,11 +2,11 @@ package com.example.demo1;
 
 import java.io.*;
 /**
- * 保存了对文件的操作，support customer中的method
+ * Saved the operation on the file，support methods in Customer.java
  *
  */
 public class FileOperation {
-    // 清空传入的文件
+    // Empty incoming files
     public static void clearFile(String filename) throws IOException {
         FileWriter fileWriter =new FileWriter(filename);
         fileWriter.write("");
@@ -14,7 +14,7 @@ public class FileOperation {
         fileWriter.close();
     }
 
-    //通过文件流复制文件内容
+    //Copy file content through file stream
     public static void copyFileUsingStream(File source, File dest) throws IOException {
         InputStream is = null;
         OutputStream os = null;
