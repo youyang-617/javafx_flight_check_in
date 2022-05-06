@@ -61,24 +61,20 @@ public class CheckInController implements Initializable {
 
             // check order number
             if (InputCheck.checkOrderNumber(OrderNumber)){
-                Customer client = new Customer("100000");
-                System.out.println(OrderNumber);
-                System.out.println(Arrays.toString(client.search()));
+                Customer client = new Customer(OrderNumber);
 
-//                if(!"[False]".equals(client.search())){
-//                    String[] search = client.search();
-//                    System.out.println(search[0]);
-//                    // successfully log in
-//                    setPageInfo(OrderNumber);
-//                    PageController controller = new PageController();
-//                    controller.change_page(login);
-//                }else{
-//                    num_label.setText("no user found");
-//                    System.out.println("查无此人!!!!!");
-//                }
+                if(!"False".equals(client.search()[0])){
+                    String[] search = client.search();
+                    System.out.println(search[0]);
+                    // successfully logged in
+                    setPageInfo(OrderNumber);
+                    PageController controller = new PageController();
+                    controller.change_page(login);
+                }else{
+                    num_label.setText("no user found");
+                }
             }else{
-                num_label.setText("wrong patten(should be 6 digits)");
-                System.out.println("wrong patten(should be 6 digits)");
+                num_label.setText("wrong pattern(should be 6 digits)");
             }
 
         }
