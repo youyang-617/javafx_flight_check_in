@@ -5,8 +5,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 
 import java.io.IOException;
@@ -26,6 +29,8 @@ public class SeatController<Lable> implements Initializable {
     Label flightChosen;
     @FXML
     private ChoiceBox<String> choose;
+    @FXML
+    private ChoiceBox<String> choose2;
 
     @FXML
     private Label welcomeText;
@@ -34,7 +39,10 @@ public class SeatController<Lable> implements Initializable {
     @FXML
     private RadioButton c1, c2, c3, c4;
 
-
+    @FXML
+    private BorderPane bp;
+    @FXML
+    private AnchorPane ap;
 
     private String myChoice = "";
 
@@ -45,7 +53,6 @@ public class SeatController<Lable> implements Initializable {
     public void setMyChoice(String myChoice) {
         this.myChoice = myChoice;
     }
-
 
     @FXML
     //when press the button PREVIOUS
@@ -59,16 +66,16 @@ public class SeatController<Lable> implements Initializable {
 
         SeatSelector seatSelector = new SeatSelector("BU1334");
         ArrayList<String> availableSeats = seatSelector.findRemainSeats();
-//        String[] testChoices = (String[]) availableSeats.toArray(new String[0]);
-        String testChoices = "";
+        String[] testChoices = (String[]) availableSeats.toArray(new String[0]);
         choose.setTooltip(new Tooltip("Choose your seat"));
 
-
         //add test choices to the choice box
-        choose.getItems().add(testChoices);
-//        choose.getItems().addAll(testChoices);
+
+        choose.getItems().addAll(testChoices);
         //display the value selected
         choose.setOnAction(this::getChoice);
+
+
     }
     //get the value which the user chose in the choiceBOX and set it to the text
 

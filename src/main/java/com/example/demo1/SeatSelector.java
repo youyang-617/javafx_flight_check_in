@@ -10,7 +10,7 @@ public class SeatSelector {
 
     public SeatSelector(String flightNum) {
         this.flightNum = flightNum;
-        this.path = "flightSeat/" + flightNum + ".txt";
+        this.path = "src/main/resources/flightSeat/" + flightNum + ".txt";
     }
 
 

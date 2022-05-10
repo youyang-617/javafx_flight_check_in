@@ -33,14 +33,13 @@
                <children>
                   <Button fx:id="previousButton" layoutX="607.0" layoutY="178.0" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: GRAY;" text="PREVIOUS" textFill="WHITE" />
                   <Button fx:id="confirmButton" layoutX="778.0" layoutY="178.0" mnemonicParsing="false" onAction="#seatContinueClick" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: GRAY;" text="CONTINUE" textFill="WHITE" />
-                  <ChoiceBox id="choose" fx:id="choose" layoutX="758.0" layoutY="41.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: gray;" />
                   <Label fx:id="welcomeText" alignment="CENTER" layoutX="465.0" layoutY="107.0" textAlignment="CENTER" />
-                  <Label fx:id="flightChosen" contentDisplay="CENTER" layoutX="448.0" layoutY="115.0" text="You haven't chosen" textAlignment="CENTER">
+                  <Label fx:id="flightChosen" contentDisplay="CENTER" layoutX="263.0" layoutY="148.0" text="You haven't chosen" textAlignment="CENTER">
                      <font>
                         <Font size="25.0" />
                      </font>
                   </Label>
-                  <RadioButton fx:id="c1" layoutX="114.0" layoutY="39.0" mnemonicParsing="false" onAction="#getSeat" text="LARGE">
+                  <RadioButton fx:id="c1" layoutX="331.0" layoutY="9.0" mnemonicParsing="false" onAction="#getSeat" text="LARGE">
                      <font>
                         <Font size="22.0" />
                      </font>
@@ -48,26 +47,37 @@
                         <ToggleGroup fx:id="seat" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="c2" layoutX="238.0" layoutY="39.0" mnemonicParsing="false" onAction="#getSeat" text="ALL" toggleGroup="$seat">
+                  <RadioButton fx:id="c2" layoutX="497.0" layoutY="16.0" mnemonicParsing="false" onAction="#getSeat" text="ALL" toggleGroup="$seat">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton fx:id="c3" layoutX="344.0" layoutY="39.0" mnemonicParsing="false" onAction="#getSeat" text="C3" toggleGroup="$seat">
+                  <RadioButton fx:id="c3" layoutX="603.0" layoutY="16.0" mnemonicParsing="false" onAction="#getSeat" text="C3" toggleGroup="$seat">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton fx:id="c4" layoutX="431.0" layoutY="39.0" mnemonicParsing="false" onAction="#getSeat" text="C4" toggleGroup="$seat">
+                  <RadioButton fx:id="c4" layoutX="690.0" layoutY="16.0" mnemonicParsing="false" onAction="#getSeat" text="C4" toggleGroup="$seat">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </RadioButton>
-                  <Label fx:id="flightChosen1" alignment="CENTER" contentDisplay="CENTER" layoutX="212.0" layoutY="115.0" text="You have chosen:" textAlignment="CENTER">
+                  <Label fx:id="flightChosen1" alignment="CENTER" contentDisplay="CENTER" layoutX="28.0" layoutY="148.0" text="You have chosen:" textAlignment="CENTER">
                      <font>
                         <Font size="25.0" />
                      </font>
                   </Label>
+                  <Label layoutX="28.0" layoutY="16.0" text="color havn't been decided" />
+                  <BorderPane fx:id="bp" layoutX="24.0" layoutY="50.0" prefHeight="80.0" prefWidth="640.0">
+                     <center>
+                        <AnchorPane fx:id="ap" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <ChoiceBox id="choose" fx:id="choose" layoutX="14.0" layoutY="4.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: gray;" />
+                              <ChoiceBox id="choose" fx:id="choose2" layoutX="483.0" layoutY="14.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: gray;" />
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
                </children>
             </AnchorPane>
          </bottom>
