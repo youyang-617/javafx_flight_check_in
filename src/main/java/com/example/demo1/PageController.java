@@ -132,8 +132,12 @@ public class PageController {
 
         }
         else if(b.getId().equals("login")){
-            path = "seat-view.fxml";
-            title = "Seat";
+            path = "lyq.fxml";
+            title = "expensiveSeat";
+        }
+        else if(b.getId().equals("expSeat")){
+                path = "seat-view.fxml";
+                title = "Seat";
         }
         else if(b.getId().equals("confirmButton")){
             path = "information.fxml";
