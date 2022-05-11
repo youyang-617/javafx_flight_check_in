@@ -61,17 +61,24 @@ public class PageController {
     private Button goback_info;
     @FXML
     private Button goback_food;
+    @FXML
+    private Button back_seat;
 
     @FXML
 
     protected void goto_next() throws IOException {
         //go to the page food
+        System.out.println(name.getText());
+        if(name.getText().equals(" "))
+        {
+           // System.out.println("aaaaaaaaaaaaaaa");
+        }else{
         change_page(button_next);
         Alert err = new Alert(Alert.AlertType.INFORMATION);
         err.setTitle("Information Dialog");
         err.setHeaderText(null);
         err.setContentText("In this page, you can select some nomarl food.If you want to update the meal set you can click next button.");
-        err.show();
+        err.show();}
     }
 
     @FXML
@@ -122,6 +129,10 @@ public class PageController {
     @FXML
     protected  void goback_food() throws IOException{
         change_page(goback_food);
+    }
+    @FXML
+    protected void goback_seat() throws IOException{
+        change_page(back_seat);
     }
     public void change_page(Button b) throws IOException{
         Stage primaryStage=(Stage)b.getScene().getWindow();
@@ -175,6 +186,12 @@ public class PageController {
         }else if(b.getId().equals("goback_food")){
             path = "food.fxml";
             title = "food";
+        }else if(b.getId().equals("back_seat")){
+            path = "seat-view.fxml";
+            title = "Seat";
+        }else if(b.getId().equals("button_next1")){
+            path = "baggage.fxml";
+            title = "baggage";
         }
         else{
             path = "";

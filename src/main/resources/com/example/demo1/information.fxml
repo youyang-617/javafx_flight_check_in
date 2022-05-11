@@ -36,10 +36,10 @@
 
             <Label prefHeight="66.0" prefWidth="202.0" text="DESTINATION" />
             <Label prefHeight="62.0" prefWidth="202.0" text="NAME" GridPane.rowIndex="1" />
-            <Label fx:id="destination" prefWidth="201.0" text="" GridPane.columnIndex="1" />
-            <Label fx:id="name" prefHeight="66.0" prefWidth="201.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="destination" prefWidth="201.0" text=" " GridPane.columnIndex="1" />
+            <Label fx:id="name" prefHeight="66.0" prefWidth="201.0" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label prefHeight="56.0" prefWidth="202.0" text="FLIGHT" GridPane.rowIndex="2" />
-            <Label fx:id="flight" prefWidth="201.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="flight" prefWidth="201.0" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <GridPane layoutX="616.0" layoutY="130.0" prefHeight="126.0" prefWidth="403.0">
@@ -58,6 +58,6 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <Button fx:id="back" layoutX="39.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#setValue" prefHeight="36.0" prefWidth="231.0" text="BACK" />
+      <Button fx:id="back_seat" layoutX="39.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#goback_seat" prefHeight="36.0" prefWidth="231.0" text="BACK" />
    </children>
 </AnchorPane>
