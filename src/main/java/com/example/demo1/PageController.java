@@ -56,6 +56,10 @@ public class PageController {
     private CheckBox pizza;
     @FXML
      Label name,flight,destination,date,gate;
+    @FXML
+
+    private Button goback_info;
+    private Button goback_food;
 
     @FXML
 
@@ -110,6 +114,14 @@ public class PageController {
     protected void upload_ID() throws IOException{
         // to be continued.....
     }
+    @FXML
+    protected  void goback_information() throws IOException {
+        change_page(goback_info);
+    }
+    @FXML
+    protected  void goback_food() throws IOException{
+        change_page(goback_info);
+    }
 
     public void change_page(Button b) throws IOException{
         Stage primaryStage=(Stage)b.getScene().getWindow();
@@ -155,6 +167,10 @@ public class PageController {
         else if(b.getId().equals("goback")){
             path = "expensive_food.fxml";
             title = "food";
+
+        }else if(b.getId().equals("goback_info")){
+            path = "information.fxml";
+            title = "information";
 
         }
         else{

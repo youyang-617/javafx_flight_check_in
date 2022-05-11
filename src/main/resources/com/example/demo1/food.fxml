@@ -13,7 +13,7 @@
                 <Font size="45.0" />
             </font>
         </Label>
-        <Button fx:id="button_next3" layoutX="631.0" layoutY="570.0" mnemonicParsing="false" onMouseClicked="#goto_next_2" prefHeight="36.0" prefWidth="285.0" text="NEXT" />
+        <Button fx:id="button_next3" layoutX="652.0" layoutY="570.0" mnemonicParsing="false" onMouseClicked="#goto_next_2" prefHeight="36.0" prefWidth="285.0" text="NEXT" />
         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="155.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="121.0">
             <image>
                 <Image url="@../../../pictures/A.jpeg" />
@@ -37,6 +37,7 @@
       <RadioButton fx:id="mealC" layoutX="185.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#MakeChoice" text="set meal C" />
       <RadioButton fx:id="mealB" layoutX="631.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#MakeChoice" text="set meal B" />
       <RadioButton fx:id="mealD" layoutX="631.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#MakeChoice" text="set meal D" />
-      <Button fx:id="button_next1" layoutX="89.0" layoutY="570.0" mnemonicParsing="false" onMouseClicked="#goto_next_1" prefHeight="36.0" prefWidth="285.0" text="Confirmation" />
+      <Button fx:id="button_next1" layoutX="338.0" layoutY="570.0" mnemonicParsing="false" onMouseClicked="#goto_next_1" prefHeight="36.0" prefWidth="285.0" text="Confirmation" />
+      <Button fx:id="goback_info" layoutX="31.0" layoutY="570.0" mnemonicParsing="false" onMouseClicked="#goback_information" prefHeight="36.0" prefWidth="285.0" text="BACK" />
     </children>
 </AnchorPane>
