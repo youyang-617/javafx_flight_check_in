@@ -13,19 +13,38 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Button?>
 
-<AnchorPane stylesheets="@ChoiceBox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ExpSeatController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="720.0" stylesheets="@ChoiceBox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ExpSeatController">
    <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0">
-         <center>
-            <Label text="耶耶耶耶" BorderPane.alignment="CENTER">
-               <font>
-                  <Font size="96.0" />
-               </font>
-            </Label>
-         </center>
-         <bottom>
-            <Button fx:id="expSeat" mnemonicParsing="false" onMouseClicked="#GoNext" text="下一页" BorderPane.alignment="CENTER" />
-         </bottom>
-      </BorderPane>
+      <Label layoutX="120.0" layoutY="20.0" text="Choose what kind of seats do you prefer" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="144.0" fitWidth="232.0" layoutX="48.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../image/seat_n.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="144.0" fitWidth="232.0" layoutX="453.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../image/seat_l.jpg" />
+         </image>
+      </ImageView>
+      <RadioButton fx:id="c1" layoutX="47.0" layoutY="254.0" mnemonicParsing="false" onAction="#setSeat" selected="true" text="Choose Normal Seats">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="seat" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="c2" layoutX="454.0" layoutY="254.0" mnemonicParsing="false" onAction="#setSeat" text="Choose Larger Seats" toggleGroup="$seat">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </RadioButton>
+      <Button fx:id="expSeat" layoutX="295.0" layoutY="302.0" mnemonicParsing="false" onMouseClicked="#GoNext" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: GRAY;" text="下一页" textFill="WHITE" />
+      <Text layoutX="442.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seats with large leg room and higer price" />
+      <Text layoutX="44.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Normal seats with standard experience" />
    </children>
 </AnchorPane>

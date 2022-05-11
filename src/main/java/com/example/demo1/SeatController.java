@@ -21,6 +21,7 @@ import java.util.ResourceBundle;
 
 public class SeatController<Lable> implements Initializable {
     public static String user_id;
+    public static boolean seatState=false;
     @FXML
     private Button previousButton;
     @FXML
