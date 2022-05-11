@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -9,10 +8,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.PageController" >
+<AnchorPane prefHeight="400.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.PageController">
    <children>
       <Button fx:id="button_next" layoutX="935.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#goto_next" prefHeight="36.0" prefWidth="231.0" text="NEXT" />
-       <Button fx:id="print" layoutX="125.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#setValue" prefHeight="36.0" prefWidth="231.0" text="PRINT" />
+       <Button fx:id="print" layoutX="485.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#setValue" prefHeight="36.0" prefWidth="231.0" text="PRINT" />
       <ImageView fitHeight="78.0" fitWidth="275.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../pictures/logo.jpeg" />
@@ -23,7 +22,7 @@
             <Font size="31.0" />
          </font>
       </Label>
-      <GridPane layoutX="68.0" layoutY="130.0" prefHeight="171.0" prefWidth="403.0" >
+      <GridPane layoutX="68.0" layoutY="130.0" prefHeight="171.0" prefWidth="403.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -59,5 +58,6 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
+      <Button fx:id="back" layoutX="39.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#setValue" prefHeight="36.0" prefWidth="231.0" text="BACK" />
    </children>
 </AnchorPane>
