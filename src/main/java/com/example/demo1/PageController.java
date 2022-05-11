@@ -55,7 +55,7 @@ public class PageController {
     @FXML
     private CheckBox pizza;
     @FXML
-     Label name,flight,destination,date,gate;
+     Label name,flight,destination,date,gate,warn,food_warn,food_warn1;
     @FXML
 
     private Button goback_info;
@@ -71,14 +71,16 @@ public class PageController {
         System.out.println(name.getText());
         if(name.getText().equals(" "))
         {
+            warn.setText("You have to print your ticket now!");
            // System.out.println("aaaaaaaaaaaaaaa");
         }else{
         change_page(button_next);
-        Alert err = new Alert(Alert.AlertType.INFORMATION);
-        err.setTitle("Information Dialog");
-        err.setHeaderText(null);
-        err.setContentText("In this page, you can select some nomarl food.If you want to update the meal set you can click next button.");
-        err.show();}
+        //Alert err = new Alert(Alert.AlertType.INFORMATION);
+        //err.setTitle("Information Dialog");
+        //err.setHeaderText(null);
+        //err.setContentText("In this page, you can select some nomarl food.If you want to update the meal set you can click next button.");
+        //err.show();
+        }
     }
 
     @FXML
@@ -101,12 +103,20 @@ public class PageController {
         }else{
             c.ModifyMeal(" ",c.search());
         }
-        change_page(button_next1); //go to the page upload_ID
+        System.out.println(c.typeOfMeal);
+        System.out.println("-----------------------");
+        if(c.typeOfMeal.equals(" ")){
+
+            food_warn.setText("You didn't choose any food!");
+
+        }else{
+        change_page(button_next1);} //go to the page upload_ID}
     }
 
     @FXML
     protected void goto_next_3() throws IOException{ //还没做两个都选，没做退回，没做鲁邦
         Customer c = new Customer(user_id);
+        c.search();
         if(steak.isSelected() && pizza.isSelected()){
             c.ModifyMeal("EF",c.search());
         }else if(pizza.isSelected() && !(steak.isSelected())) {
@@ -114,9 +124,18 @@ public class PageController {
         }else if(!pizza.isSelected() && steak.isSelected()) {
             c.ModifyMeal("E", c.search());}
         else{
-            c.ModifyMeal(" ",c.search());
+           // c.ModifyMeal(" ",c.search());
         }
-        change_page(button_next2);
+        if(c.typeOfMeal.equals(" ")){
+
+            food_warn1.setText("You didn't choose any food!");
+
+        }else{
+
+
+            change_page(button_next2);}
+
+
     }
     @FXML
     protected void upload_ID() throws IOException{
@@ -241,6 +260,7 @@ public class PageController {
             if (result.get() == ButtonType.OK){
                 //name = new Label();
                setValues();
+               warn.setText(" ");
             } else {
 
             }
