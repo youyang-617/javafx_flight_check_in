@@ -59,6 +59,7 @@ public class PageController {
     @FXML
 
     private Button goback_info;
+    @FXML
     private Button goback_food;
 
     @FXML
@@ -120,9 +121,8 @@ public class PageController {
     }
     @FXML
     protected  void goback_food() throws IOException{
-        change_page(goback_info);
+        change_page(goback_food);
     }
-
     public void change_page(Button b) throws IOException{
         Stage primaryStage=(Stage)b.getScene().getWindow();
         primaryStage.close();//to open the new wimdow, we need to close the old window
@@ -172,6 +172,9 @@ public class PageController {
             path = "information.fxml";
             title = "information";
 
+        }else if(b.getId().equals("goback_food")){
+            path = "food.fxml";
+            title = "food";
         }
         else{
             path = "";
