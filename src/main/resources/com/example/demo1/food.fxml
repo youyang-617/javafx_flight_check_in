@@ -13,7 +13,7 @@
                 <Font size="45.0" />
             </font>
         </Label>
-        <Button fx:id="button_next3" layoutX="652.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#goto_next_2" prefHeight="36.0" prefWidth="246.0" text="update food" />
+        <Button fx:id="button_next3" layoutX="652.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#goto_next_2" prefHeight="36.0" prefWidth="246.0" text="Upgrade Food" />
         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="46.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="46.0" AnchorPane.topAnchor="128.0">
             <image>
                 <Image url="@../../../pictures/A.jpeg" />

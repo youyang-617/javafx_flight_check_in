@@ -2,7 +2,9 @@ package com.example.demo1;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.RadioButton;
 
 import java.io.IOException;
@@ -19,8 +21,15 @@ public class ExpSeatController {
     @FXML
     //when press the button PREVIOUS
     protected void goBack() throws IOException {
-        PageController controller = new PageController();
-        controller.change_page(expBack);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Log out");
+        alert.setHeaderText("You are about to log out");
+        alert.setContentText("Do you really want to log out?");
+
+        if (alert.showAndWait().get() == ButtonType.OK){
+            PageController controller = new PageController();
+            controller.change_page(expBack);
+        }
     }
     @FXML
     private void goNext() throws IOException {

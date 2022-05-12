@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 
 import java.io.IOException;
@@ -15,6 +16,7 @@ import java.util.ResourceBundle;
 public class SeatController<Lable> implements Initializable {
     public static String user_id;
     public static boolean seatState;
+    public ImageView seatsImage;
     @FXML
     private Button previousButton;
     @FXML
@@ -42,8 +44,15 @@ public class SeatController<Lable> implements Initializable {
     @FXML
     //when press the button PREVIOUS
     protected void goBack() throws IOException {
-        PageController controller = new PageController();
-        controller.change_page(previousButton);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Log out");
+        alert.setHeaderText("You are about to go back to the previous page");
+        alert.setContentText("The data you have filled in on this page will not be recorded");
+
+        if (alert.showAndWait().get() == ButtonType.OK){
+            PageController controller = new PageController();
+            controller.change_page(previousButton);
+        }
     }
 
     @Override
@@ -88,12 +97,15 @@ public class SeatController<Lable> implements Initializable {
         String choice = choose.getValue();
         setMyChoice(choice);
         flightChosen.setText(choice);
+        flightChosen.setTextFill(Color.web("black"));
     }
 
     public void seatContinueClick(ActionEvent event) throws IOException {
         String choice = getMyChoice();
+        System.out.println("mychoice"+choice);
         if (Objects.equals(choice, "")){
-            flightChosen.setTextFill(Color.web("#0076a3"));
+            System.out.println("?");
+            flightChosen.setTextFill(Color.web("#45bbbf"));
             flightChosen.setText("You haven't chosen");
         }
         else{
@@ -106,9 +118,10 @@ public class SeatController<Lable> implements Initializable {
             String[] search = client.search();
             client.ModifySeatNum(choice,search);
             //页面跳转
+            PageController controller = new PageController();
+            controller.change_page(confirmButton);
+            //controller.setValue();
         }
-        PageController controller = new PageController();
-        controller.change_page(confirmButton);
-        //controller.setValue();
+
     }
 }

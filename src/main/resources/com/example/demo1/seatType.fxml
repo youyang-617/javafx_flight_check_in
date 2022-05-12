@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Button?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="720.0" stylesheets="@ChoiceBox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ExpSeatController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="720.0" stylesheets="@seat.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ExpSeatController">
    <children>
       <Label layoutX="120.0" layoutY="20.0" text="Choose what kind of seats do you prefer" textAlignment="CENTER">
          <font>
@@ -30,21 +30,21 @@
             <Image url="@../../../image/seat_l.jpg" />
          </image>
       </ImageView>
-      <RadioButton fx:id="c1" layoutX="47.0" layoutY="254.0" mnemonicParsing="false" onAction="#setSeat" selected="true" text="Choose Normal Seats">
+      <RadioButton fx:id="c1" layoutX="58.0" layoutY="254.0" mnemonicParsing="false" onAction="#setSeat" selected="true" text="Choose Normal Seats">
          <font>
-            <Font size="18.0" />
+            <Font size="16.0" />
          </font>
          <toggleGroup>
             <ToggleGroup fx:id="seat" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="c2" layoutX="454.0" layoutY="254.0" mnemonicParsing="false" onAction="#setSeat" text="Choose Larger Seats" toggleGroup="$seat">
+      <RadioButton fx:id="c2" layoutX="468.0" layoutY="254.0" mnemonicParsing="false" onAction="#setSeat" text="Choose Larger Seats" toggleGroup="$seat">
          <font>
-            <Font size="18.0" />
+            <Font size="16.0" />
          </font>
       </RadioButton>
-      <Button fx:id="expBack" layoutX="373.0" layoutY="306.0" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: GRAY;" text="LOG OUT" textFill="WHITE" />
-      <Button fx:id="expSeat" layoutX="545.0" layoutY="306.0" mnemonicParsing="false" onMouseClicked="#goNext" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: GRAY;" text="CONTINUE" textFill="WHITE" />
+      <Button fx:id="expBack" layoutX="448.0" layoutY="306.0" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #45bbbf; -fx-border-radius: 5px; -fx-border-width: 3px;" text="&lt; Logout" textFill="WHITE" />
+      <Button fx:id="expSeat" layoutX="589.0" layoutY="306.0" mnemonicParsing="false" onMouseClicked="#goNext" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #45bbbf; -fx-border-radius: 5px; -fx-border-width: 3px;" text="Next &gt;" textFill="WHITE" />
       <Text layoutX="448.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seats with large leg room &amp; higer price" />
       <Text layoutX="44.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Normal seats with standard experience" />
    </children>
