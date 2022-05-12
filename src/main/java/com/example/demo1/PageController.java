@@ -174,7 +174,7 @@ public class PageController {
 
         }
         else if(b.getId().equals("login")){
-            path = "lyq.fxml";
+            path = "seatType.fxml";
             title = "expensiveSeat";
         }
         else if(b.getId().equals("expSeat")){
@@ -211,6 +211,15 @@ public class PageController {
         }else if(b.getId().equals("button_next1")){
             path = "baggage.fxml";
             title = "baggage";
+        }else if(b.getId().equals("button_next1")){
+            path = "baggage.fxml";
+            title = "baggage";
+        }else if("expBack".equals(b.getId())){
+            path = "check_in.fxml";
+            title = "check in";
+        }else if("previousButton".equals(b.getId())){
+            path = "seatType.fxml";
+            title = "Select seat type";
         }
         else{
             path = "";

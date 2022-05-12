@@ -27,7 +27,7 @@
                   <Font name="Verdana" size="30.0" />
                </font>
             </Label>
-            <Button fx:id="login" layoutX="138.0" layoutY="284.0" mnemonicParsing="false" onMouseClicked="#CheckIn" prefHeight="37.0" prefWidth="81.0" style="-fx-background-color: #45bbbf;" text="Log in" textAlignment="CENTER" textFill="WHITE" />
+            <Button fx:id="login" layoutX="147.0" layoutY="285.0" mnemonicParsing="false" onAction="#CheckIn" prefHeight="37.0" prefWidth="81.0" style="-fx-background-color: #45bbbf;" text="Log in" textAlignment="CENTER" textFill="WHITE" />
             <TabPane layoutX="15.0" layoutY="98.0" prefHeight="171.0" prefWidth="344.0" style="-fx-border-width: 2; -fx-border-color: #45bbbf;" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                 <Tab fx:id="num_tab" closable="false" style="-fx-background-color-: #45bbbf;" text=" booking number">

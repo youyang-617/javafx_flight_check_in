@@ -1,27 +1,20 @@
 package com.example.demo1;
 
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class SeatController<Lable> implements Initializable {
     public static String user_id;
-    public static boolean seatState=false;
+    public static boolean seatState;
     @FXML
     private Button previousButton;
     @FXML
@@ -30,20 +23,11 @@ public class SeatController<Lable> implements Initializable {
     Label flightChosen;
     @FXML
     private ChoiceBox<String> choose;
-    @FXML
-    private ChoiceBox<String> choose2;
 
     @FXML
     private Label welcomeText;
-
-    //button to choose seat
     @FXML
-    private RadioButton c1, c2, c3, c4;
-
-    @FXML
-    private BorderPane bp;
-    @FXML
-    private AnchorPane ap;
+    private Label seatStateLabel;
 
     private String myChoice = "";
 
@@ -57,26 +41,43 @@ public class SeatController<Lable> implements Initializable {
 
     @FXML
     //when press the button PREVIOUS
-    protected void onHelloButtonClick() {
-        welcomeText.setText("还没做呢");
+    protected void goBack() throws IOException {
+        PageController controller = new PageController();
+        controller.change_page(previousButton);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("it's meeeee"+user_id);
+        System.out.println("seat:"+seatState);
+        // 通过传来的user id找到航班号
+        Customer client = new Customer(user_id);
+        String[] search = client.search();
+        System.out.println(search[3]);
+        // 通过航班号找座位
+        SeatSelector seatSelector = new SeatSelector(search[3]);
+        // 如果选的是普通
+        if (!seatState){
+            ArrayList<String> availableSeats = seatSelector.findNormalSeats();
+            String[] testChoices = availableSeats.toArray(new String[0]);
+            choose.setTooltip(new Tooltip("Choose your seat"));
+            //add test choices to the choice box
+            choose.getItems().addAll(testChoices);
+            //display the value selected
+            choose.setOnAction(this::getChoice);
+        }
+        // 如果选的是large
+        else {
+            ArrayList<String> availableSeats = seatSelector.findLargeSeats();
+            String[] testChoices = availableSeats.toArray(new String[0]);
+            choose.setTooltip(new Tooltip("Choose your seat"));
+            seatStateLabel.setText("With extra leg room");
+            //add test choices to the choice box
 
-        SeatSelector seatSelector = new SeatSelector("BU1334");
-        ArrayList<String> availableSeats = seatSelector.findRemainSeats();
-        String[] testChoices = (String[]) availableSeats.toArray(new String[0]);
-        choose.setTooltip(new Tooltip("Choose your seat"));
-
-        //add test choices to the choice box
-
-        choose.getItems().addAll(testChoices);
-        //display the value selected
-        choose.setOnAction(this::getChoice);
-
-
+            choose.getItems().addAll(testChoices);
+            //display the value selected
+            choose.setOnAction(this::getChoice);
+        }
     }
     //get the value which the user chose in the choiceBOX and set it to the text
 
@@ -96,49 +97,18 @@ public class SeatController<Lable> implements Initializable {
             flightChosen.setText("You haven't chosen");
         }
         else{
+            //在航班座位表上更新
             SeatSelector seatSelector = new SeatSelector("BU1334");
             seatSelector.update(choice);
             System.out.println("pressed");
+            //在个人页面上更新
+            Customer client = new Customer(user_id);
+            String[] search = client.search();
+            client.ModifySeatNum(choice,search);
             //页面跳转
         }
         PageController controller = new PageController();
-
-
-
         controller.change_page(confirmButton);
         //controller.setValue();
-    }
-
-
-    public void getSeat(ActionEvent event) {
-        String choice = null;
-        if (c1.isSelected()) {
-            choice = "C1";
-            //怎么把这个航班作为变量传过来啊
-            SeatSelector seatSelector = new SeatSelector("BU1334");
-            ArrayList<String> availableSeats = seatSelector.findLargeSeats();
-            String[] testChoices = (String[]) availableSeats.toArray(new String[0]);
-            //add test choices to the choice box
-
-            choose.getItems().addAll(testChoices);
-            //display the value selected
-            choose.setOnAction(this::getChoice);
-        } else if (c2.isSelected()) {
-            choice = "C2";
-            //怎么把这个航班作为变量传过来啊
-            SeatSelector seatSelector = new SeatSelector("BU1334");
-            ArrayList<String> availableSeats = seatSelector.findNormalSeats();
-            String[] testChoices = (String[]) availableSeats.toArray(new String[0]);
-            //add test choices to the choice box
-            choose.getItems().addAll(testChoices);
-            //display the value selected
-            choose.setOnAction(this::getChoice);
-        } else if (c3.isSelected()) {
-            choice = "C3";
-        } else if (c4.isSelected()) {
-            choice = "C4";
-        }
-        setMyChoice(choice);
-        flightChosen.setText(choice);
     }
 }

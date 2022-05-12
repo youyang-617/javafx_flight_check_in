@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 
@@ -10,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
@@ -50,30 +52,34 @@ public class CheckInController implements Initializable {
         initTexts();
 
     }
+
     /**
      * for log in
      **/
     @FXML
-    private void CheckIn() throws IOException {
-        // choose to log in with ID number
+    private void CheckIn(ActionEvent event) throws IOException {
+        checkIn();
+    }
+
+    public void checkIn() throws IOException {
         if (num_tab.isSelected()) {
             String OrderNumber = num_text.getText();
 
             // check order number
-            if (InputCheck.checkOrderNumber(OrderNumber)){
+            if (InputCheck.checkOrderNumber(OrderNumber)) {
                 Customer client = new Customer(OrderNumber);
 
-                if(!"False".equals(client.search()[0])){
+                if (!"False".equals(client.search()[0])) {
                     String[] search = client.search();
                     System.out.println(search[0]);
                     // successfully logged in
                     setPageInfo(OrderNumber);
                     PageController controller = new PageController();
                     controller.change_page(login);
-                }else{
+                } else {
                     num_label.setText("no user found");
                 }
-            }else{
+            } else {
                 num_label.setText("wrong pattern(should be 6 digits)");
             }
 
@@ -84,20 +90,20 @@ public class CheckInController implements Initializable {
             String idNum = id_text.getText();
 
             // check family name and id number
-            if (InputCheck.checkCustomerName(familyName) && InputCheck.checkIDNumber(idNum)){
+            if (InputCheck.checkCustomerName(familyName) && InputCheck.checkIDNumber(idNum)) {
                 Customer client = new Customer(familyName, idNum);
                 String[] search = client.search();
-                if(!"False".equals(search[0])){
+                if (!"False".equals(search[0])) {
                     System.out.println(search[5]);
                     // successfully log in
                     setPageInfo(search[5]);
                     PageController controller = new PageController();
                     controller.change_page(login);
-                }else{
+                } else {
                     fam_label.setText("no user found");
                     System.out.println("wrong!!!!!");
                 }
-            }else{
+            } else {
                 fam_label.setText("incorrect Family name or ID");
                 System.out.println("so very wrong");
             }
@@ -109,12 +115,9 @@ public class CheckInController implements Initializable {
             PageController controller = new PageController();
             controller.change_page(login);
         }
-
-
     }
 
-
-// to
+    // to
     private void initTexts() {
         num_tab.setOnSelectionChanged((Event event) -> {
             clearIssueEntries();
@@ -132,11 +135,11 @@ public class CheckInController implements Initializable {
         num_text.clear();
         familyName_text.clear();
         id_text.clear();
-    //  thingy_to_put_error_text_which_is_a_text.setText("");
+        //  thingy_to_put_error_text_which_is_a_text.setText("");
     }
 
     // paa the id number to all pages
-    public void setPageInfo(String OrderNumber){
+    public void setPageInfo(String OrderNumber) {
 //        SeatController seat = new SeatController();
 //        PageController page = new PageController();
 //        BaggageController baggage = new BaggageController();
@@ -148,11 +151,11 @@ public class CheckInController implements Initializable {
 //        SeatController seatControl=(SeatController) StageManager.CONTROLLER.get("seat");
 //        PageController pageControl=(PageController) StageManager.CONTROLLER.get("page");
 
-        SeatController.user_id =OrderNumber;
-        PageController.user_id=OrderNumber;
-        BaggageController.user_id=OrderNumber;
-        BaggageLabelsController.user_id=OrderNumber;
-        ExpSeatController.user_id=OrderNumber;
+        SeatController.user_id = OrderNumber;
+        PageController.user_id = OrderNumber;
+        BaggageController.user_id = OrderNumber;
+        BaggageLabelsController.user_id = OrderNumber;
+        ExpSeatController.user_id = OrderNumber;
     }
 
 }
