@@ -45,7 +45,7 @@ public class SeatController<Lable> implements Initializable {
     //when press the button PREVIOUS
     protected void goBack() throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Log out");
+        alert.setTitle("Go back");
         alert.setHeaderText("You are about to go back to the previous page");
         alert.setContentText("The data you have filled in on this page will not be recorded");
 
