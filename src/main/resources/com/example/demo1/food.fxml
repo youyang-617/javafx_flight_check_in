@@ -13,7 +13,7 @@
                 <Font size="45.0" />
             </font>
         </Label>
-        <Button fx:id="button_next3" layoutX="652.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#goto_next_2" prefHeight="36.0" prefWidth="246.0" text="Upgrade Food" />
+        <Button fx:id="button_next3" layoutX="636.0" layoutY="302.0" mnemonicParsing="false" onMouseClicked="#goto_next_2" prefHeight="36.0" prefWidth="246.0" text="Upgrade Food" />
         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="46.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="46.0" AnchorPane.topAnchor="128.0">
             <image>
                 <Image url="@../../../pictures/A.jpeg" />
@@ -40,6 +40,8 @@
       <Button fx:id="button_next1" layoutX="630.0" layoutY="564.0" mnemonicParsing="false" onMouseClicked="#goto_next_1" prefHeight="36.0" prefWidth="285.0" text="Confirmation" />
       <Button fx:id="goback_info" layoutX="31.0" layoutY="570.0" mnemonicParsing="false" onMouseClicked="#goback_information" prefHeight="36.0" prefWidth="285.0" text="BACK" />
       <Label fx:id="food_warn" layoutX="636.0" layoutY="460.0" prefHeight="24.0" prefWidth="268.0" textFill="#e81515" />
-      <TextArea layoutX="636.0" layoutY="140.0" prefHeight="164.0" prefWidth="268.0" text="In this page, you can &#10;select some nomarl food.&#10;If you want to update the&#10;meal set you can click &#10;the button below." />
+      <Label layoutX="630.0" layoutY="149.0" prefHeight="36.0" prefWidth="258.0" text="In this page, you can select " />
+      <Label layoutX="630.0" layoutY="197.0" prefHeight="24.0" prefWidth="246.0" text="normal food, if you want to" />
+      <Label layoutX="627.0" layoutY="239.0" prefHeight="24.0" prefWidth="297.0" text="update, please press the button " />
     </children>
 </AnchorPane>
