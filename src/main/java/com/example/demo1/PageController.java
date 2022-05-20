@@ -190,6 +190,9 @@ public class PageController {
             title = "ID";
         }
         else if (b.getId().equals("button_next2")){
+            path = "payment.fxml";
+            title = "payment";
+        }else if (b.getId().equals("1")){
             path = "baggage.fxml";
             title = "baggage";
         }

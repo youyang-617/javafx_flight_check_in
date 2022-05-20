@@ -23,4 +23,18 @@ public class InputCheck {
         return pattern.matcher(IDNumber).matches();
     }
 
+    public static boolean checkCreditCardNumber(String orderNumber) {
+
+        Pattern pattern = Pattern.compile("\\d{16}"); //The order number can only have 6 numbers
+        return pattern.matcher(orderNumber).matches();
+
+    }
+
+    public static boolean checkCreditCardPassword(String orderNumber) {
+
+        Pattern pattern = Pattern.compile("\\d{6}"); //The order number can only have 6 numbers
+        return pattern.matcher(orderNumber).matches();
+
+    }
+
 }

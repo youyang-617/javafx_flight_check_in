@@ -1,7 +1,6 @@
 package com.example.demo1;
 
 import java.io.*;
-import java.util.Arrays;
 
 /**
  * Saved the operation of passengers
@@ -12,6 +11,9 @@ import java.util.Arrays;
  */
 public class Customer {
 
+    int money=0;
+    int extrafeeMeal=0;//Cost of meal
+    int extrafeeSeat=0;//Cost of seat
     String firstName;
     String lastName;
     String idNum;
@@ -45,7 +47,7 @@ public class Customer {
     /**
      * This method is to query the passenger information through the order number or ID number &amp; last name
      * This method can cache all the information of the passenger into the object
-     * @return If the search is successful, return the array that saves the customer information
+     * @return If the search is successful, return the array that saves the customer information. If not, return "False"
      */
     public String[] search(){
         line = 0;
@@ -111,13 +113,10 @@ public class Customer {
      * This method can change the meal information of the passenger
      * @param typeOfMeal Types of meals imported from the front end
      * @param customerInfo Passenger information string array returned by search method
-     * @return Cost of meals
      */
-    public int ModifyMeal(String typeOfMeal,String[] customerInfo){
-        //extra fee for meal
-        int extrafee=0;
+    public void ModifyMeal(String typeOfMeal,String[] customerInfo){
         try {
-            String tempFile = "src/main/resources/com/example/demo1/temp.csv";
+            String tempFile = "temp.csv";
             //Empty temporary files to avoid writing later
             FileOperation.clearFile(tempFile);
 
@@ -144,14 +143,7 @@ public class Customer {
                         //Otherwise replace
                         else {
                             in_w.write(typeOfMeal);
-                            if (typeOfMeal.equals("a")||typeOfMeal.equals("b")||typeOfMeal.equals("c")||typeOfMeal.equals("d"))
-                            {
-                                extrafee=0;
-                            }
-                            if (typeOfMeal.equals("e")||typeOfMeal.equals("f"))
-                            {
-                                extrafee=50;
-                            }
+
 
                         }
                         //Add a comma after pasting each word
@@ -180,9 +172,37 @@ public class Customer {
             System.out.println("exception occurred"+ e);
         }
 
-        return extrafee;
-
     }
+    /**
+     * This method can change the seat information of the passenger
+     * @return Type of meal
+     */
+    public String getTypeOfMeal() {
+        return typeOfMeal;
+    }
+    /**
+     * This method can change the seat information of the passenger
+     * @return Extrafee of meal
+     */
+    public int getExtrafeeMeal() {
+        return extrafeeMeal;
+    }
+    /**
+     * This method can change the seat information of the passenger
+     * @return Extrafee of seat
+     */
+    public int getExtrafeeSeat() {
+        return extrafeeSeat;
+    }
+
+    /**
+     * This method can change the seat information of the passenger
+     * @return Seat number
+     */
+    public String getSeatNum() {
+        return seatNum;
+    }
+
     /**
      * This method can change the seat information of the passenger
      * @param SeatNum Types of meals imported from the front end
@@ -191,7 +211,7 @@ public class Customer {
     public void ModifySeatNum(String SeatNum,String[] customerInfo){
         //this.line=line;
         try {
-            String tempFile = "src/main/resources/com/example/demo1/temp.csv";
+            String tempFile = "temp.csv";
             //Empty temporary files to avoid writing later
             FileOperation.clearFile(tempFile);
 
@@ -219,6 +239,7 @@ public class Customer {
                         //Otherwise replace
                         else {
                             in_w.write(SeatNum);
+
                         }
                         //Add a comma after pasting each word
                         if(i!=length-1){
@@ -246,6 +267,24 @@ public class Customer {
             System.out.println("exception occurred"+ e);
         }
 
+    }
+    /**
+     * This method can calculate the cost of extra service for meal and seat
+     * @return extra fee for this flight
+     */
+    public int getMoney() {
+        if (typeOfMeal.equals("E")||typeOfMeal.equals("F"))
+        {
+            extrafeeMeal=50;
+        }
+        if (seatNum.equals("J1")||seatNum.equals("J2"))
+        {
+            extrafeeSeat=323;
+        }
+
+        money=extrafeeMeal+extrafeeSeat;
+        System.out.println(money);
+        return money;
     }
 
 

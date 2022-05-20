@@ -47,7 +47,7 @@
                         <Font name="System Italic" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="79.0" text="\$50" textFill="#43b7b9">
+                  <Label fx:id="money" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="79.0" text="\$50" textFill="#43b7b9">
                      <font>
                         <Font size="26.0" />
                      </font>
@@ -57,7 +57,7 @@
                         <Font name="System Italic" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="330.0" layoutY="10.0" prefHeight="100.0" prefWidth="285.0" text="Seat A and meal F" textFill="#45bbbf">
+                  <Label fx:id="type" layoutX="330.0" layoutY="10.0" prefHeight="100.0" prefWidth="285.0" text="Seat A and meal F" textFill="#45bbbf">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -78,13 +78,18 @@
                   </PasswordField>
                </children>
             </Pane>
+            <Button fx:id="Pay" layoutX="335.0" layoutY="354.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="79.0" style="-fx-background-color: #45bbbf;" text="Pay" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
-      <Button fx:id="goback" layoutX="244.0" layoutY="532.0" mnemonicParsing="false" onMouseClicked="#GoBack" prefHeight="45.0" prefWidth="162.0" style="-fx-background-color: #45bbbf;" text="&lt; Back" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="goback" layoutX="244.0" layoutY="532.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="162.0" style="-fx-background-color: #45bbbf;" text="&lt; Back" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font></Button>
-      <Button fx:id="finish" layoutX="549.0" layoutY="532.0" mnemonicParsing="false" onMouseClicked="#Finish" prefHeight="45.0" prefWidth="162.0" style="-fx-background-color: #45bbbf;" text="Finish &gt;" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="finish" layoutX="549.0" layoutY="532.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="162.0" style="-fx-background-color: #45bbbf;" text="Finish &gt;" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font></Button>
