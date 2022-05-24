@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.PageController">
+<AnchorPane stylesheets="@seat.css,@button.css" prefHeight="400.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.PageController">
    <children>
       <Button fx:id="button_next" layoutX="935.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#goto_next" prefHeight="36.0" prefWidth="231.0" text="NEXT" />
        <Button fx:id="print" layoutX="485.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#setValue" prefHeight="36.0" prefWidth="231.0" text="PRINT" />

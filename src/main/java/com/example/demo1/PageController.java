@@ -94,12 +94,16 @@ public class PageController {
         Customer c = new Customer(user_id);
         if(mealA.isSelected()){
             c.ModifyMeal("A",c.search());
+            food_warn.setText(" ");
         }else if(mealB.isSelected()){
             c.ModifyMeal("B",c.search());
+            food_warn.setText(" ");
         }else if(mealC.isSelected()){
             c.ModifyMeal("C",c.search());
+            food_warn.setText(" ");
         }else if(mealD.isSelected()){
             c.ModifyMeal("D",c.search());
+            food_warn.setText(" ");
         }else{
             c.ModifyMeal(" ",c.search());
         }
@@ -119,10 +123,14 @@ public class PageController {
         c.search();
         if(steak.isSelected() && pizza.isSelected()){
             c.ModifyMeal("EF",c.search());
+            food_warn1.setText(" ");
         }else if(pizza.isSelected() && !(steak.isSelected())) {
             c.ModifyMeal("F", c.search());
+            food_warn1.setText(" ");
         }else if(!pizza.isSelected() && steak.isSelected()) {
-            c.ModifyMeal("E", c.search());}
+            c.ModifyMeal("E", c.search());
+            food_warn1.setText(" ");
+        }
         else{
            // c.ModifyMeal(" ",c.search());
         }
@@ -137,10 +145,7 @@ public class PageController {
 
 
     }
-    @FXML
-    protected void upload_ID() throws IOException{
-        // to be continued.....
-    }
+
     @FXML
     protected  void goback_information() throws IOException {
         change_page(goback_info);

@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.PageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@seat.css,@button.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.PageController">
    <children>
       <Label alignment="CENTER" layoutX="-1.0" prefHeight="107.0" prefWidth="960.0" text="You can update your meal set">
          <font>
@@ -23,12 +23,12 @@
             <Image url="@../../../pictures/pizza.jpeg" />
          </image>
       </ImageView>
-      <Button fx:id="button_next2" layoutX="581.0" layoutY="481.0" mnemonicParsing="false" onMouseClicked="#goto_next_3" prefHeight="36.0" prefWidth="288.0" text="Pay extra momey" />
+      <Button fx:id="button_next2" layoutX="600.0" layoutY="481.0" mnemonicParsing="false" onMouseClicked="#goto_next_3" prefHeight="36.0" prefWidth="188.0" text="Pay extra momey &gt;" textFill="WHITE" />
       <Label alignment="CENTER" layoutX="122.0" layoutY="320.0" prefHeight="47.0" prefWidth="200.0" text="\$50" />
       <Label alignment="CENTER" layoutX="581.0" layoutY="314.0" prefHeight="47.0" prefWidth="200.0" text="\$50" />
       <CheckBox fx:id="steak" layoutX="183.0" layoutY="375.0" mnemonicParsing="false" text="steak" />
       <CheckBox fx:id="pizza" layoutX="643.0" layoutY="375.0" mnemonicParsing="false" text="pizza" />
-      <Button fx:id="goback_food" layoutX="91.0" layoutY="481.0" mnemonicParsing="false" onMouseClicked="#goback_food" prefHeight="36.0" prefWidth="288.0" text="BACK" />
+      <Button fx:id="goback_food" layoutX="122.0" layoutY="481.0" mnemonicParsing="false" onMouseClicked="#goback_food" prefHeight="36.0" prefWidth="188.0" text="&lt;BACK" textAlignment="JUSTIFY" textFill="#fcf9f9" />
       <Label fx:id="food_warn1" layoutX="373.0" layoutY="376.0" prefHeight="24.0" prefWidth="200.0" textFill="#ee0a0a" />
    </children>
 </AnchorPane>
