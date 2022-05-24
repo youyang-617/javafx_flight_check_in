@@ -3,10 +3,7 @@ package com.example.demo1;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.RadioButton;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -15,6 +12,7 @@ import java.util.ResourceBundle;
 public class ExpSeatController  implements Initializable {
     public static String user_id;
     public static boolean seatState=false;
+    public ToggleGroup seat;
     @FXML
     private RadioButton c1, c2;
     @FXML

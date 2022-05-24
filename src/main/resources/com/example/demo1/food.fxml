@@ -1,47 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-
-<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" stylesheets="@seat.css,@button.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.PageController">
-    <children>
-        <Label alignment="CENTER" layoutX="10.0" layoutY="20.0" prefHeight="84.0" prefWidth="941.0" text="Please choose the food ">
-            <font>
-                <Font size="45.0" />
-            </font>
-        </Label>
-        <Button fx:id="button_next3" layoutX="700.0" layoutY="302.0" mnemonicParsing="false" onMouseClicked="#goto_next_2" prefHeight="36.0" prefWidth="152.0" text="Upgrade Food" textFill="WHITE" />
-        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="65.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="65.0" AnchorPane.topAnchor="128.0">
-            <image>
-                <Image url="@../../../pictures/A.jpeg" />
-            </image></ImageView>
-        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="370.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="390.0" AnchorPane.topAnchor="130.0">
-            <image>
-                <Image url="@../../../pictures/B.jpeg" />
-            </image>
-        </ImageView>
-        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="55.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="355.0">
-            <image>
-                <Image url="@../../../pictures/C.jpeg" />
-            </image>
-        </ImageView>
-        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="370.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="355.0">
-            <image>
-                <Image url="@../../../pictures/D.jpeg" />
-            </image>
-        </ImageView>
-      <RadioButton fx:id="mealA" layoutX="103.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#MakeChoice" text="set meal A" />
-      <RadioButton fx:id="mealC" layoutX="106.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#MakeChoice" text="set meal C" />
-      <RadioButton fx:id="mealB" layoutX="409.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#MakeChoice" text="set meal B" />
-      <RadioButton fx:id="mealD" layoutX="418.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#MakeChoice" text="set meal D" />
-      <Button fx:id="button_next1" layoutX="700.0" layoutY="565.0" mnemonicParsing="false" onMouseClicked="#goto_next_1" prefHeight="36.0" prefWidth="152.0" text="Confirmation &gt;" textFill="WHITE" />
-      <Button fx:id="goback_info" layoutX="55.0" layoutY="573.0" mnemonicParsing="false" onMouseClicked="#goback_information" prefHeight="36.0" prefWidth="152.0" text="&lt; BACK" textFill="WHITE" />
-      <Label fx:id="food_warn" layoutX="636.0" layoutY="460.0" prefHeight="24.0" prefWidth="268.0" textFill="#e81515" />
-      <Label layoutX="647.0" layoutY="147.0" prefHeight="36.0" prefWidth="258.0" text="In this page, you can select " />
-      <Label layoutX="647.0" layoutY="197.0" prefHeight="24.0" prefWidth="246.0" text="normal food, if you want to" />
-      <Label layoutX="649.0" layoutY="239.0" prefHeight="24.0" prefWidth="297.0" text="update, please press the button " />
-    </children>
+<?import javafx.scene.text.*?>
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="640.0" prefWidth="960.0" stylesheets="@ratioButton.css,@button.css"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo1.PageController">
+    <Label alignment="CENTER" layoutX="10.0" layoutY="20.0" prefHeight="84.0" prefWidth="941.0"
+           text="Please choose the food ">
+        <font>
+            <Font size="45.0"/>
+        </font>
+    </Label>
+    <Button fx:id="button_next3" layoutX="716.0" layoutY="287.0" mnemonicParsing="false"
+            onMouseClicked="#goto_next_2" prefHeight="36.0" prefWidth="189.0"
+            style="-fx-background-color: white; -fx-border-width: 2px; -fx-border-color: black;"
+            text="Upgrade Food">
+        <font>
+            <Font name="System Bold" size="14.0"/>
+        </font>
+    </Button>
+    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="65.0" layoutY="128.0" pickOnBounds="true"
+               preserveRatio="true" AnchorPane.leftAnchor="65.0" AnchorPane.topAnchor="128.0">
+        <Image url="@../../../pictures/A.jpeg"/>
+    </ImageView>
+    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="370.0" layoutY="130.0" pickOnBounds="true"
+               preserveRatio="true" AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="390.0"
+               AnchorPane.topAnchor="130.0">
+        <Image url="@../../../pictures/B.jpeg"/>
+    </ImageView>
+    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="55.0" layoutY="355.0" pickOnBounds="true"
+               preserveRatio="true" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="355.0">
+        <Image url="@../../../pictures/C.jpeg"/>
+    </ImageView>
+    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="370.0" layoutY="355.0" pickOnBounds="true"
+               preserveRatio="true" AnchorPane.topAnchor="355.0">
+        <Image url="@../../../pictures/D.jpeg"/>
+    </ImageView>
+    <RadioButton fx:id="mealA" layoutX="103.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#MakeChoice"
+                 text="set meal A"/>
+    <RadioButton fx:id="mealC" layoutX="106.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#MakeChoice"
+                 text="set meal C"/>
+    <RadioButton fx:id="mealB" layoutX="409.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#MakeChoice"
+                 text="set meal B"/>
+    <RadioButton fx:id="mealD" layoutX="418.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#MakeChoice"
+                 text="set meal D"/>
+    <Button fx:id="button_next1" layoutX="832.0" layoutY="576.0" mnemonicParsing="false"
+            onMouseClicked="#goto_next_1" prefHeight="30.0" prefWidth="85.0" text="Next &gt;" textFill="WHITE"/>
+    <Button fx:id="goback_info" layoutX="716.0" layoutY="576.0" mnemonicParsing="false"
+            onMouseClicked="#goback_information" prefHeight="30.0" prefWidth="85.0" text="&lt; Back"
+            textFill="WHITE"/>
+    <Label fx:id="food_warn" layoutX="636.0" layoutY="460.0" prefHeight="24.0" prefWidth="268.0"
+           textFill="#e81515"/>
+    <Label layoutX="716.0" layoutY="150.0" prefHeight="36.0" prefWidth="258.0" text="In this page, you can select ">
+        <font>
+            <Font size="13.0"/>
+        </font>
+    </Label>
+    <Label layoutX="716.0" layoutY="197.0" prefHeight="24.0" prefWidth="246.0" text="normal food, if you want to">
+        <font>
+            <Font size="13.0"/>
+        </font>
+    </Label>
+    <Label layoutX="716.0" layoutY="242.0" prefHeight="24.0" prefWidth="220.0"
+           text="update, please press the button ">
+        <font>
+            <Font size="13.0"/>
+        </font>
+    </Label>
 </AnchorPane>
