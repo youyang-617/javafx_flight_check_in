@@ -9,7 +9,7 @@ import java.io.*;
  * In csv,from left to right： firstName,lastName,idNum,flightNum,gender,bookingNum,seatNum,typeOfMeal
  * carryOnPkgNum,checkInPkgNum,departure,destination,date,gate
  */
-public class Customer {
+public class Customer extends FileOperation{
 
     int money=0;
     int extrafeeMeal=0;//Cost of meal
@@ -118,7 +118,7 @@ public class Customer {
         try {
             String tempFile = "temp.csv";
             //Empty temporary files to avoid writing later
-            FileOperation.clearFile(tempFile);
+            clearFile(tempFile);
 
             //Open the file to read and the temp to write
             File information = new File(filename);
@@ -164,9 +164,9 @@ public class Customer {
             }
             in.close();
             in_w.close();
-            FileOperation.clearFile(filename);
+            clearFile(filename);
 
-            FileOperation.copyFileUsingStream(temp, information);
+            copyFileUsingStream(temp, information);
         }
         catch (IOException e) {
             System.out.println("exception occurred"+ e);
@@ -213,7 +213,7 @@ public class Customer {
         try {
             String tempFile = "temp.csv";
             //Empty temporary files to avoid writing later
-            FileOperation.clearFile(tempFile);
+          clearFile(tempFile);
 
             //Open the file to read and the temp to write
             File information = new File(filename);
@@ -259,9 +259,9 @@ public class Customer {
             }
             in.close();
             in_w.close();
-            FileOperation.clearFile(filename);
+            clearFile(filename);
 
-            FileOperation.copyFileUsingStream(temp, information);
+            copyFileUsingStream(temp, information);
         }
         catch (IOException e) {
             System.out.println("exception occurred"+ e);

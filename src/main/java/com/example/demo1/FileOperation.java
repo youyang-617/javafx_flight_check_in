@@ -5,7 +5,7 @@ import java.io.*;
  * Saved the operation on the file，support methods in Customer.java
  *
  */
-public class FileOperation {
+public abstract class FileOperation {
     // Empty incoming files
     public static void clearFile(String filename) throws IOException {
         FileWriter fileWriter =new FileWriter(filename);
