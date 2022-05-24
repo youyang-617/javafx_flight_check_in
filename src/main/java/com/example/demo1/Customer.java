@@ -277,6 +277,11 @@ public class Customer extends FileOperation{
         {
             extrafeeMeal=50;
         }
+        if (typeOfMeal.equals("EF"))
+        {
+            extrafeeMeal=100;
+        }
+
         if (seatNum.equals("J1")||seatNum.equals("J2"))
         {
             extrafeeSeat=323;
