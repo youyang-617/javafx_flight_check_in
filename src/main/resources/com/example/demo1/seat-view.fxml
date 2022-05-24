@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Button?>
 
-<AnchorPane stylesheets="@seat.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.SeatController">
+<AnchorPane stylesheets="@seat.css,@button.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.SeatController">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0">
          <top>
@@ -31,8 +31,8 @@
          <bottom>
             <AnchorPane prefHeight="243.0" prefWidth="960.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="previousButton" layoutX="688.0" layoutY="178.0" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #45bbbf; -fx-border-radius: 5px; -fx-border-width: 3px;" text="&lt; Back" textFill="WHITE" />
-                  <Button fx:id="confirmButton" layoutX="834.0" layoutY="178.0" mnemonicParsing="false" onAction="#seatContinueClick" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #45bbbf; -fx-border-radius: 5px; -fx-border-width: 3px;" text="Next &gt;" textFill="WHITE" />
+                  <Button fx:id="previousButton" layoutX="688.0" layoutY="178.0" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="85.0" text="&lt; Back" textFill="WHITE" />
+                  <Button fx:id="confirmButton" layoutX="834.0" layoutY="178.0" mnemonicParsing="false" onAction="#seatContinueClick" prefHeight="30.0" prefWidth="85.0" text="Next &gt;" textFill="WHITE" />
                   <Label fx:id="welcomeText" alignment="CENTER" layoutX="465.0" layoutY="107.0" textAlignment="CENTER" />
                   <Label fx:id="flightChosen" contentDisplay="CENTER" layoutX="254.0" layoutY="45.0" text="You haven't chosen" textAlignment="CENTER">
                      <font>
