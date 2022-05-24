@@ -157,6 +157,9 @@ public class CheckInController implements Initializable {
         BaggageLabelsController.user_id = OrderNumber;
         ExpSeatController.user_id = OrderNumber;
         PaymentController.user_id = OrderNumber;
+        InformationController.user_id = OrderNumber;
+        FoodController.user_id = OrderNumber;
+        ExpensiveFoodController.user_id = OrderNumber;
     }
 
 }
