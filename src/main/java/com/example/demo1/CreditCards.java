@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class CheckCreditCards {
+public class CreditCards {
 
     public static boolean checkCreditCards(String cardNum, String password) {
         String path = "src/main/resources/com/example/demo1/creditcard/credit card.txt";
