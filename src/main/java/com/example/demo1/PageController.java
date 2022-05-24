@@ -217,11 +217,8 @@ public class PageController {
             path = "seat-view.fxml";
             title = "Seat";
         }else if(b.getId().equals("button_next1")){
-            path = "baggage.fxml";
-            title = "baggage";
-        }else if(b.getId().equals("button_next1")){
-            path = "baggage.fxml";
-            title = "baggage";
+            path = "payment.fxml";
+            title = "payment";
         }else if("expBack".equals(b.getId())){
             path = "check_in.fxml";
             title = "check in";
