@@ -4,16 +4,26 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Seat {
+    /**
+     * @author Junfeng Jin
+     * @version 1.0
+     * This is the class for selecting the seats.
+     */
     private int row = 35, column = 6;
     private String flightNum;
     private String path;
-
+    /**
+     * This is the constructor
+     */
     public Seat(String flightNum) {
         this.flightNum = flightNum;
         this.path = "src/main/resources/flightSeat/" + flightNum + ".txt";
     }
 
-
+    /**
+     * Find all the seats' status
+     * @return Find the availability of each seat
+     */
     public int[][] findSeatState() {
         int[][] state = new int[row][column];
 
@@ -39,7 +49,9 @@ public class Seat {
         return state;
 
     }
-
+    /**
+     * Select the available seat
+     */
     public void update(int[][] state) {
         try {
             File file = new File(path);
@@ -66,6 +78,9 @@ public class Seat {
     }
 
 
+    /**
+    * Select the available seat
+    */
     public void update(String selectedSeat) {
         int len = selectedSeat.length();
         String row;
@@ -80,38 +95,17 @@ public class Seat {
         int row_num = Integer.parseInt(row)-1;
         int column_num=0;
 
-        switch (column) {
-            case 'A':
-                column_num = 0;
-                break;
-
-            case 'B':
-                column_num = 1;
-                break;
-
-            case 'C':
-                column_num = 2;
-                break;
-
-            case 'D':
-                column_num = 3;
-                break;
-
-            case 'E':
-                column_num = 4;
-                break;
-
-            case 'F':
-                column_num = 5;
-                break;
-        }
+        column_num = parseSeat(column);
 
 
         int[][] seat = this.findSeatState();
         seat[row_num][column_num] = 1;
         update(seat);
     }
-
+    /**
+     * Find all the remaining seats
+     * @return Arraylist of remaining seats
+     */
     public ArrayList<String> findRemainSeats() {
         int[][] state = new int[row][column];
         ArrayList available = new ArrayList<String>();
@@ -128,28 +122,7 @@ public class Seat {
                 for (i = 0; i < column; i++) {
                     state[j][i] = Integer.parseInt(String.valueOf(line.charAt(i)));
                     if (state[j][i] == 0) {
-                        String temp = "";
-                        switch (i) {
-                            case 0:
-                                temp = "A" + (j+1);
-                                break;
-                            case 1:
-                                temp = "B" + (j+1);
-                                break;
-                            case 2:
-                                temp = "C" + (j+1);
-                                break;
-
-                            case 3:
-                                temp = "J" + (j+1);
-                                break;
-                            case 4:
-                                temp = "K" + (j+1);
-                                break;
-                            case 5:
-                                temp = "L" + (j+1);
-                                break;
-                        }
+                        String temp = parseSeat_reverse(i) + (j+1);
                         available.add(temp);
                     }
                 }
@@ -164,7 +137,10 @@ public class Seat {
         return available;
     }
 
-
+    /**
+     * Find all the Large seats
+     * @return Arraylist of Large seats
+     */
     public ArrayList<String> findLargeSeats() {
         int[][] state = new int[row][column];
         ArrayList available = new ArrayList<String>();
@@ -185,28 +161,7 @@ public class Seat {
                 for (i = 0; i < column; i++) {
                     state[j][i] = Integer.parseInt(String.valueOf(line.charAt(i)));
                     if (state[j][i] == 0) {
-                        String temp = "";
-                        switch (i) {
-                            case 0:
-                                temp = "A" + (j+1);
-                                break;
-                            case 1:
-                                temp = "B" + (j+1);
-                                break;
-                            case 2:
-                                temp = "C" + (j+1);
-                                break;
-
-                            case 3:
-                                temp = "J" + (j+1);
-                                break;
-                            case 4:
-                                temp = "K" + (j+1);
-                                break;
-                            case 5:
-                                temp = "L" + (j+1);
-                                break;
-                        }
+                        String temp = parseSeat_reverse(i) + (j+1);
                         available.add(temp);
                     }
                 }
@@ -221,7 +176,10 @@ public class Seat {
         return available;
     }
 
-
+    /**
+     * Find all the normal seats
+     * @return Arraylist of normal seats
+     */
     public ArrayList<String> findNormalSeats() {
         int[][] state = new int[row][column];
         ArrayList available = new ArrayList<String>();
@@ -243,28 +201,7 @@ public class Seat {
                 for (i = 0; i < column; i++) {
                     state[j][i] = Integer.parseInt(String.valueOf(line.charAt(i)));
                     if (state[j][i] == 0) {
-                        String temp = "";
-                        switch (i) {
-                            case 0:
-                                temp = "A" + (j+1);
-                                break;
-                            case 1:
-                                temp = "B" + (j+1);
-                                break;
-                            case 2:
-                                temp = "C" + (j+1);
-                                break;
-
-                            case 3:
-                                temp = "J" + (j+1);
-                                break;
-                            case 4:
-                                temp = "K" + (j+1);
-                                break;
-                            case 5:
-                                temp = "L" + (j+1);
-                                break;
-                        }
+                        String temp = parseSeat_reverse(i) + (j+1);
                         available.add(temp);
                     }
                 }
@@ -277,5 +214,28 @@ public class Seat {
         }
 
         return available;
+    }
+    public int parseSeat(Character column) {
+        return switch (column) {
+            case 'A' -> 0;
+            case 'B' -> 1;
+            case 'C' -> 2;
+            case 'D' -> 3;
+            case 'E' -> 4;
+            case 'F' -> 5;
+            default -> 0;
+        };
+    }
+
+    public String parseSeat_reverse (int i) {
+        return switch (i) {
+            case 0 -> "A";
+            case 1 -> "B";
+            case 2 -> "C";
+            case 3 -> "J";
+            case 4 -> "K";
+            case 5 -> "L";
+            default -> "";
+        };
     }
 }

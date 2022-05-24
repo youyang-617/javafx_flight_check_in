@@ -116,7 +116,7 @@ public class Customer extends FileOperation{
      */
     public void ModifyMeal(String typeOfMeal,String[] customerInfo){
         try {
-            String tempFile = "temp.csv";
+            String tempFile = "src/main/resources/com/example/demo1/temp.csv";
             //Empty temporary files to avoid writing later
             clearFile(tempFile);
 

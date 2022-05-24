@@ -1,68 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-
-<AnchorPane stylesheets="@seat.css,@button.css" prefHeight="400.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.PageController">
-   <children>
-      <Button fx:id="button_next" layoutX="935.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#goto_next" prefHeight="36.0" prefWidth="231.0" text="NEXT" />
-       <Button fx:id="print" layoutX="485.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#setValue" prefHeight="36.0" prefWidth="231.0" text="PRINT" />
-      <ImageView fitHeight="78.0" fitWidth="275.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../pictures/logo.jpeg" />
-         </image>
-      </ImageView>
-      <Label layoutX="247.0" layoutY="18.0" prefHeight="72.0" prefWidth="829.0" text="Boarding Pass                      A STAR ALLIANCE MEMBER">
-         <font>
-            <Font size="31.0" />
-         </font>
-      </Label>
-      <GridPane layoutX="68.0" layoutY="130.0" prefHeight="171.0" prefWidth="403.0">
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="400.0" prefWidth="1200.0" stylesheets="@seat.css,@button.css" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.PageController">
+    <Button fx:id="button_next" layoutX="1044.0" layoutY="334.0" mnemonicParsing="false" onMouseClicked="#goto_next"
+            prefHeight="30.0" prefWidth="85.0" text="NEXT &gt;" textFill="WHITE"/>
+    <Button fx:id="print" layoutX="485.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#setValue"
+            prefHeight="36.0" prefWidth="231.0"
+            style="-fx-background-color: white; -fx-border-width: 1px; -fx-border-color: black;" text="PRINT">
+        <font>
+            <Font name="System Bold" size="12.0"/>
+        </font>
+    </Button>
+    <ImageView fitHeight="78.0" fitWidth="275.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@../../../pictures/logo.jpeg"/>
+    </ImageView>
+    <Label layoutX="247.0" layoutY="18.0" prefHeight="72.0" prefWidth="829.0"
+           text="Boarding Pass                      A STAR ALLIANCE MEMBER">
+        <font>
+            <Font size="31.0"/>
+        </font>
+    </Label>
+    <GridPane layoutX="68.0" layoutY="130.0" prefHeight="171.0" prefWidth="403.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
         </rowConstraints>
-         <children>
-
-            <Label prefHeight="66.0" prefWidth="202.0" text="DESTINATION" />
-            <Label prefHeight="62.0" prefWidth="202.0" text="NAME" GridPane.rowIndex="1" />
-            <Label fx:id="destination" prefWidth="201.0" text=" " GridPane.columnIndex="1" />
-            <Label fx:id="name" prefHeight="66.0" prefWidth="201.0" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label prefHeight="56.0" prefWidth="202.0" text="FLIGHT" GridPane.rowIndex="2" />
-            <Label fx:id="flight" prefWidth="201.0" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
-         </children>
-      </GridPane>
-      <GridPane layoutX="616.0" layoutY="130.0" prefHeight="126.0" prefWidth="403.0">
-         <children>
-            <Label prefHeight="66.0" prefWidth="202.0" text="DATE" />
-            <Label prefHeight="62.0" prefWidth="202.0" text="GATE" GridPane.rowIndex="1" />
-            <Label fx:id="date" prefWidth="201.0" text="" GridPane.columnIndex="1" />
-            <Label fx:id="gate" prefWidth="201.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-         </children>
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         </rowConstraints>
-      </GridPane>
-      <Button fx:id="back_seat" layoutX="39.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#goback_seat" prefHeight="36.0" prefWidth="231.0" text="BACK" />
-      <Label fx:id="warn" alignment="CENTER" contentDisplay="CENTER" layoutX="387.0" layoutY="272.0" prefHeight="20.0" prefWidth="427.0" textFill="#f20000">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-   </children>
+        <Label prefHeight="66.0" prefWidth="202.0" text="DESTINATION"/>
+        <Label prefHeight="62.0" prefWidth="202.0" text="NAME" GridPane.rowIndex="1"/>
+        <Label fx:id="destination" prefWidth="201.0" text=" " GridPane.columnIndex="1"/>
+        <Label fx:id="name" prefHeight="66.0" prefWidth="201.0" text=" " GridPane.columnIndex="1"
+               GridPane.rowIndex="1"/>
+        <Label prefHeight="56.0" prefWidth="202.0" text="FLIGHT" GridPane.rowIndex="2"/>
+        <Label fx:id="flight" prefWidth="201.0" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    </GridPane>
+    <GridPane layoutX="616.0" layoutY="130.0" prefHeight="126.0" prefWidth="403.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <Label prefHeight="66.0" prefWidth="202.0" text="DATE"/>
+        <Label prefHeight="62.0" prefWidth="202.0" text="GATE" GridPane.rowIndex="1"/>
+        <Label fx:id="date" prefWidth="201.0" GridPane.columnIndex="1"/>
+        <Label fx:id="gate" prefWidth="201.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    </GridPane>
+    <Button fx:id="back_seat" layoutX="65.0" layoutY="334.0" mnemonicParsing="false" onMouseClicked="#goback_seat"
+            prefHeight="30.0" prefWidth="85.0" text="&lt; BACK" textFill="WHITE"/>
+    <Label fx:id="warn" alignment="CENTER" contentDisplay="CENTER" layoutX="387.0" layoutY="272.0" prefHeight="20.0"
+           prefWidth="427.0" textFill="#f20000">
+        <font>
+            <Font size="22.0"/>
+        </font>
+    </Label>
 </AnchorPane>
