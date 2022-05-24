@@ -4,5 +4,6 @@ Button{
     -fx-border-width: 3px;
 }
 Button:hover{
+
     -fx-background-color: #7fe7e7;
 }
