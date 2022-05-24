@@ -16,8 +16,11 @@ public class CreditCards {
             while ((line = bufferedReader.readLine()) != null) {
                 String[] account = line.split(" ");
                 if (account[0].equals(cardNum)) {
-                    if (account[1].equals(password)) return true;
-                    else return false;
+                    if (account[1].equals(password)) {
+                        return true;
+                    } else {
+                        return false;
+                    }
                 }
             }
         } catch (IOException e) {
