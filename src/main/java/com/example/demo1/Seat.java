@@ -3,12 +3,12 @@ package com.example.demo1;
 import java.io.*;
 import java.util.ArrayList;
 
-public class SeatSelector {
+public class Seat {
     private int row = 35, column = 6;
     private String flightNum;
     private String path;
 
-    public SeatSelector(String flightNum) {
+    public Seat(String flightNum) {
         this.flightNum = flightNum;
         this.path = "src/main/resources/flightSeat/" + flightNum + ".txt";
     }
@@ -178,7 +178,9 @@ public class SeatSelector {
             int line_count = 0;
 
             while ((line = bufferedReader.readLine()) != null) {
-                if (line_count >= 2) break;
+                if (line_count >= 2) {
+                    break;
+                }
                 line_count++;
                 for (i = 0; i < column; i++) {
                     state[j][i] = Integer.parseInt(String.valueOf(line.charAt(i)));

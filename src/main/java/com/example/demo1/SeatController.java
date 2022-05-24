@@ -64,7 +64,7 @@ public class SeatController<Lable> implements Initializable {
         String[] search = client.search();
         System.out.println(search[3]);
         // 通过航班号找座位
-        SeatSelector seatSelector = new SeatSelector(search[3]);
+        Seat seatSelector = new Seat(search[3]);
         // 如果选的是普通
         if (!seatState){
             ArrayList<String> availableSeats = seatSelector.findNormalSeats();
@@ -110,7 +110,7 @@ public class SeatController<Lable> implements Initializable {
         }
         else{
             //在航班座位表上更新
-            SeatSelector seatSelector = new SeatSelector("BU1334");
+            Seat seatSelector = new Seat("BU1334");
             seatSelector.update(choice);
             System.out.println("pressed");
             //在个人页面上更新
