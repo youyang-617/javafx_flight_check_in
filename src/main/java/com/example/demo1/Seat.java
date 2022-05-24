@@ -9,7 +9,7 @@ public class Seat {
      */
     private final int row = 35;
     private final int column = 6;
-    private final String path;
+    private String path;
     /**
      * This is the constructor
      */

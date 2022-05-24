@@ -32,6 +32,7 @@ public class Customer extends FileOperation{
     int line;
     //location of customer info
     String filename = "src/main/resources/com/example/demo1/Customer_information.csv";
+    String tempFile = "src/main/resources/com/example/demo1/temp.csv";
 
     public Customer(String bookingNum) {
 
@@ -60,6 +61,7 @@ public class Customer extends FileOperation{
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        assert fileReader != null;
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         //Query status identifier,0 is not found, 1 is not found after searching, and 2 is found successfully
         int check = 0;
@@ -116,7 +118,7 @@ public class Customer extends FileOperation{
      */
     public void ModifyMeal(String typeOfMeal,String[] customerInfo){
         try {
-            String tempFile = "src/main/resources/com/example/demo1/temp.csv";
+
             //Empty temporary files to avoid writing later
             clearFile(tempFile);
 
@@ -211,7 +213,7 @@ public class Customer extends FileOperation{
     public void ModifySeatNum(String SeatNum,String[] customerInfo){
         //this.line=line;
         try {
-            String tempFile = "temp.csv";
+
             //Empty temporary files to avoid writing later
           clearFile(tempFile);
 
