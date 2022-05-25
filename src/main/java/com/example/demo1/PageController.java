@@ -80,7 +80,7 @@ public class PageController {
         }
         //actions to go back to the previous page
         else if(b.getId().equals("goback")){
-            path = "expensive_food.fxml";
+            path = "food.fxml";
             title = "food";
 
         }else if(b.getId().equals("goback_info")){
