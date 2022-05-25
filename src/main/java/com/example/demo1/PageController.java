@@ -77,9 +77,16 @@ public class PageController {
         }else if (b.getId().equals("1")){
             path = "baggage.fxml";
             title = "baggage";
+        }else if (b.getId().equals("next_pay")){
+            path = "baggage.fxml";
+            title = "baggage";
         }
         //actions to go back to the previous page
         else if(b.getId().equals("goback")){
+            path = "food.fxml";
+            title = "food";
+
+        }else if(b.getId().equals("goback_pay")){
             path = "food.fxml";
             title = "food";
 
