@@ -63,7 +63,6 @@ public class Seat {
                     }
                     bufferedWriter.write(content + "\r\n");
 
-
                 }
 
 
@@ -93,6 +92,7 @@ public class Seat {
         int column_num;
 
         column_num = parseSeat(column);
+        System.out.println("row:"+row_num+"col"+column_num);
 
 
         int[][] seat = this.findSeatState();
@@ -206,9 +206,9 @@ public class Seat {
         return switch (column) {
             case 'B' -> 1;
             case 'C' -> 2;
-            case 'D' -> 3;
-            case 'E' -> 4;
-            case 'F' -> 5;
+            case 'J' -> 3;
+            case 'K' -> 4;
+            case 'L' -> 5;
             default -> 0;
         };
     }

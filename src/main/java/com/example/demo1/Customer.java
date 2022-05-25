@@ -275,16 +275,16 @@ public class Customer extends FileOperation{
      * @return extra fee for this flight
      */
     public int getMoney() {
-        if (typeOfMeal.equals("E")||typeOfMeal.equals("F"))
+        if ("E".equals(typeOfMeal)|| "F".equals(typeOfMeal))
         {
             extrafeeMeal=50;
         }
-        if (typeOfMeal.equals("EF"))
+        if ("EF".equals(typeOfMeal))
         {
             extrafeeMeal=100;
         }
 
-        if (seatNum.equals("J1")||seatNum.equals("J2"))
+        if ("J1".equals(seatNum)|| "J2".equals(seatNum))
         {
             extrafeeSeat=323;
         }

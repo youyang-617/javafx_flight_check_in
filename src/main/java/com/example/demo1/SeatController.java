@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 public class SeatController<Lable> implements Initializable {
     public static String user_id;
     public static boolean seatState;
+    public static String chosenSeat;
     public ImageView seatsImage;
     @FXML
     private Button previousButton;
@@ -82,7 +83,6 @@ public class SeatController<Lable> implements Initializable {
             choose.setTooltip(new Tooltip("Choose your seat"));
             seatStateLabel.setText("With extra leg room");
             //add test choices to the choice box
-
             choose.getItems().addAll(testChoices);
             //display the value selected
             choose.setOnAction(this::getChoice);
@@ -97,7 +97,10 @@ public class SeatController<Lable> implements Initializable {
         String choice = choose.getValue();
         setMyChoice(choice);
         flightChosen.setText(choice);
-        flightChosen.setTextFill(Color.web("black"));
+        flightChosen.setTextFill(Color.web("#45bbbf"));
+        chosenSeat= choice;
+
+        InformationController.chosenSeat=SeatController.chosenSeat;
     }
 
     public void seatContinueClick(ActionEvent event) throws IOException {
@@ -105,7 +108,7 @@ public class SeatController<Lable> implements Initializable {
         System.out.println("mychoice"+choice);
         if (Objects.equals(choice, "")){
             System.out.println("?");
-            flightChosen.setTextFill(Color.web("#45bbbf"));
+            flightChosen.setTextFill(Color.web("red"));
             flightChosen.setText("You haven't chosen");
         }
         else{
@@ -122,6 +125,5 @@ public class SeatController<Lable> implements Initializable {
             controller.change_page(confirmButton);
             //controller.setValue();
         }
-
     }
 }

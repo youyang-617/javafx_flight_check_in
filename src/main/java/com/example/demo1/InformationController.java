@@ -11,6 +11,7 @@ import java.util.Optional;
 
 public class InformationController {
     public static String user_id;
+    public static String chosenSeat;
     @FXML
     Label name,flight,destination,date,gate,warn,food_warn,food_warn1;
     @FXML
@@ -40,6 +41,7 @@ public class InformationController {
     protected void goback_seat() throws IOException{
         PageController pageController = new PageController();
         pageController.change_page(back_seat);
+        System.out.println(chosenSeat);
     }
     public void setValue(){
 
@@ -54,8 +56,6 @@ public class InformationController {
 
             setValues();
             warn.setText(" ");
-        } else {
-
         }
 
     }
