@@ -64,14 +64,14 @@
                   </Label>
                </children>
             </HBox>
-            <Pane layoutX="-2.0" layoutY="201.0" prefHeight="153.0" prefWidth="754.0">
+            <Pane layoutX="-2.0" layoutY="184.0" prefHeight="170.0" prefWidth="754.0">
                <children>
-                  <TextField fx:id="num_text" layoutX="203.0" layoutY="27.0" prefHeight="45.0" prefWidth="348.0" promptText="Credit Card number">
+                  <TextField fx:id="card" layoutX="316.0" layoutY="39.0" prefHeight="45.0" prefWidth="307.0" promptText="16 digits">
                      <font>
                         <Font name="Verdana" size="16.0" />
                      </font>
                   </TextField>
-                  <PasswordField layoutX="203.0" layoutY="91.0" prefHeight="45.0" prefWidth="348.0" promptText="Password">
+                  <PasswordField fx:id="password" layoutX="316.0" layoutY="92.0" prefHeight="45.0" prefWidth="307.0" promptText="6 digits">
                      <font>
                         <Font name="Verdana" size="16.0" />
                      </font>
@@ -81,9 +81,24 @@
                         <Font size="22.0" />
                      </font>
                   </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="115.0" layoutY="39.0" prefHeight="45.0" prefWidth="194.0" text="Credit Card number" textFill="#45bbbf">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="123.0" layoutY="92.0" prefHeight="45.0" prefWidth="179.0" text="Password" textFill="#45bbbf">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="num_label" alignment="CENTER" layoutX="191.0" layoutY="-6.0" prefHeight="45.0" prefWidth="364.0" textFill="RED">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
-            <Button fx:id="Pay" layoutX="335.0" layoutY="354.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="79.0" style="-fx-background-color: #45bbbf;" text="Pay" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="pay" layoutX="335.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#Pay" prefHeight="29.0" prefWidth="79.0" style="-fx-background-color: #45bbbf;" text="Pay" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>

@@ -140,16 +140,6 @@ public class CheckInController implements Initializable {
 
     // paa the id number to all pages
     public void setPageInfo(String OrderNumber) {
-//        SeatController seat = new SeatController();
-//        PageController page = new PageController();
-//        BaggageController baggage = new BaggageController();
-//        StageManager.CONTROLLER.put("seat", seat);
-//        StageManager.CONTROLLER.put("page", page);
-//        StageManager.CONTROLLER.put("baggage",baggage);
-//        System.out.println(StageManager.CONTROLLER);
-
-//        SeatController seatControl=(SeatController) StageManager.CONTROLLER.get("seat");
-//        PageController pageControl=(PageController) StageManager.CONTROLLER.get("page");
 
         SeatController.user_id = OrderNumber;
         PageController.user_id = OrderNumber;
