@@ -56,21 +56,7 @@ public class FoodController implements Initializable {
     protected void goto_next_1() throws IOException {
         //PageController pageController = new PageController();
         //Customer c = new Customer(user_id);
-        if(mealA.isSelected()){
-            c.ModifyMeal("A",c.search());
-            food_warn.setText(" ");
-        }else if(mealB.isSelected()){
-            c.ModifyMeal("B",c.search());
-            food_warn.setText(" ");
-        }else if(mealC.isSelected()){
-            c.ModifyMeal("C",c.search());
-            food_warn.setText(" ");
-        }else if(mealD.isSelected()){
-            c.ModifyMeal("D",c.search());
-            food_warn.setText(" ");
-        }else{
-            c.ModifyMeal(" ",c.search());
-        }
+        selectFood();
         System.out.println(c.typeOfMeal);
         System.out.println(getMyChoice());
         System.out.println("-----------------------");
@@ -82,7 +68,7 @@ public class FoodController implements Initializable {
     @FXML
     protected void goto_next_2() throws IOException{
         //PageController pageController = new PageController();
-
+        selectFood();
         pageController.change_page(button_next3);
 
     }
@@ -102,6 +88,24 @@ public class FoodController implements Initializable {
         //String choice = choose.getValue();
         setMyChoice("select");
 
+    }
+
+    public void selectFood(){
+        if(mealA.isSelected()){
+            c.ModifyMeal("A",c.search());
+            food_warn.setText(" ");
+        }else if(mealB.isSelected()){
+            c.ModifyMeal("B",c.search());
+            food_warn.setText(" ");
+        }else if(mealC.isSelected()){
+            c.ModifyMeal("C",c.search());
+            food_warn.setText(" ");
+        }else if(mealD.isSelected()){
+            c.ModifyMeal("D",c.search());
+            food_warn.setText(" ");
+        }else{
+            c.ModifyMeal(" ",c.search());
+        }
     }
 
 }
