@@ -7,25 +7,41 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
+/**
+ * This class is used to select the normal food or go to the next page
+ * @author Xinlei Ge
+ */
 public class FoodController implements Initializable {
-
+    /**The user id od the passenger*/
     public static String user_id;
 
+    /**
+     * used to show user has selected the food
+     */
     private String myChoice = "";
+
+    /**button used to go to baggage page*/
     @FXML
-    private Button button_next1;
+    private Button toBaggage;
+
+    /**labels used to warn the passenger*/
     @FXML
-    Label food_warn;
+    Label foodWarn;
+
+    /**button used to go back*/
     @FXML
-    private Button goback_info;
+    private Button gobackInfo;
+
+    /**button used to go to expensive food page*/
     @FXML
-    private Button button_next3;
+    private Button toExpensivefood;
+
+    /**button used to select food*/
     @FXML
     private RadioButton mealA;
     @FXML
@@ -38,6 +54,11 @@ public class FoodController implements Initializable {
     Customer c = new Customer(user_id);
     PageController pageController = new PageController();
 
+    /**
+     * Initialize the page, run when the page loads
+     * @param url the page parameter, generated automatically
+     * @param resourceBundle the page parameter, generated automatically
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ToggleGroup group = new ToggleGroup();
@@ -45,6 +66,7 @@ public class FoodController implements Initializable {
         mealB.setToggleGroup(group);
         mealC.setToggleGroup(group);
         mealD.setToggleGroup(group);
+        //set listening
         mealA.setOnAction(this::getChoice);
         mealD.setOnAction(this::getChoice);
         mealC.setOnAction(this::getChoice);
@@ -52,57 +74,85 @@ public class FoodController implements Initializable {
         c.ModifyMeal(" ",c.search());
     }
 
-    @FXML
-    protected void goto_next_1() throws IOException {
-        //PageController pageController = new PageController();
-        //Customer c = new Customer(user_id);
-        selectFood();
-        System.out.println(c.typeOfMeal);
-        System.out.println(getMyChoice());
-        System.out.println("-----------------------");
-        if(Objects.equals(getMyChoice(), "")){
-            food_warn.setText("You didn't choose any food!");
-        }else{
-            pageController.change_page(button_next1);}
-    }
-    @FXML
-    protected void goto_next_2() throws IOException{
-        //PageController pageController = new PageController();
-        selectFood();
-        pageController.change_page(button_next3);
-
-    }
-    @FXML
-    protected  void goback_information() throws IOException {
-        //PageController pageController = new PageController();
-        pageController.change_page(goback_info);
-    }
-
+    /**
+     * getter of parameter 'myChoice''
+     * @return value of 'myChoice'
+     */
     public String getMyChoice() {
         return myChoice;
     }
+
+    /**
+     * setter of parameter 'myChoice''
+     */
     public void setMyChoice(String myChoice) {
         this.myChoice = myChoice;
     }
-    public void getChoice(ActionEvent event) {
-        //String choice = choose.getValue();
-        setMyChoice("select");
 
+    /**
+     * To indicate the user has selected
+     * @param event mouse click and other actions
+     */
+    public void getChoice(ActionEvent event) {
+        setMyChoice("select");
     }
 
+
+    /**
+     * when the 'next' button is pressed, judge if user has chosen food
+     * If selected, jump to the next page; otherwise, prompt the user should select and not jump
+     * @throws IOException Exception loading page file
+     */
+    @FXML
+    protected void gotoBaggage() throws IOException {
+        //set value to backend
+        selectFood();
+        //judge if the passenger has selected food
+        if(Objects.equals(getMyChoice(), "")){
+            foodWarn.setText("You didn't choose any food!");
+        }else{
+            pageController.change_page(toBaggage);}
+    }
+
+    /**
+     * when the 'pdate' button is pressed jump to the next page
+     * @throws IOException Exception loading page file
+     */
+    @FXML
+    protected void gotoExpensivefood() throws IOException{
+        //set value to backend
+        selectFood();
+        //go to the next page
+        pageController.change_page(toExpensivefood);
+    }
+
+    /**
+     * When pressed the 'back' button, go back to the previous page
+     * @throws IOException Exception loading page file
+     */
+    @FXML
+    protected void gobackInformation() throws IOException {
+        //To make sure the passenger want to go back
+        CommonGoBack goGoGo = new CommonGoBack(gobackInfo);
+    }
+
+    /**
+     * set the chosen food to the backend
+     */
     public void selectFood(){
+        //set the value to the backend
         if(mealA.isSelected()){
             c.ModifyMeal("A",c.search());
-            food_warn.setText(" ");
+            foodWarn.setText(" ");
         }else if(mealB.isSelected()){
             c.ModifyMeal("B",c.search());
-            food_warn.setText(" ");
+            foodWarn.setText(" ");
         }else if(mealC.isSelected()){
             c.ModifyMeal("C",c.search());
-            food_warn.setText(" ");
+            foodWarn.setText(" ");
         }else if(mealD.isSelected()){
             c.ModifyMeal("D",c.search());
-            food_warn.setText(" ");
+            foodWarn.setText(" ");
         }else{
             c.ModifyMeal(" ",c.search());
         }
