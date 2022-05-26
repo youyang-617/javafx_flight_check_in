@@ -78,9 +78,10 @@ public class Seat {
 
 
     /**
-    * Select the available seat
-    */
-    public void update(String selectedSeat) {
+     * Select the available seat
+     * flag = 1, select; flag = 0, cancel
+     */
+    public void update(String selectedSeat, int flag) {
         int len = selectedSeat.length();
         String row;
         char column;
@@ -99,35 +100,12 @@ public class Seat {
 
 
         int[][] seat = this.findSeatState();
-        seat[row_num][column_num] = 1;
+        seat[row_num][column_num] = flag;
         update(seat);
     }
 
 
-    /**
-     * Select the available seat
-     */
-    public void update(String selectedSeat, int flag) {
-        int len = selectedSeat.length();
-        String row;
-        char column;
-        column = selectedSeat.charAt(0);
-        if (len == 2) {
-            row = ""+selectedSeat.charAt(1);
 
-        } else {
-            row = String.valueOf(selectedSeat.charAt(1)) + String.valueOf(selectedSeat.charAt(2));
-        }
-        int row_num = Integer.parseInt(row)-1;
-        int column_num=0;
-
-        column_num = parseSeat(column);
-
-
-        int[][] seat = this.findSeatState();
-        seat[row_num][column_num] = 0;
-        update(seat);
-    }
 
     /**
      * Find all the remaining seats
