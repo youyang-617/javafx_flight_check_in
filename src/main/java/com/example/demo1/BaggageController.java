@@ -75,9 +75,8 @@ public class BaggageController implements Initializable {
     }
 
     @FXML
-    private void GoBack() throws IOException {
-        PageController controller = new PageController();
-        controller.change_page(goback);
+    private void GoBack(){
+        CommonGoBack goGoGo = new CommonGoBack(goback);
 
     }
     @FXML

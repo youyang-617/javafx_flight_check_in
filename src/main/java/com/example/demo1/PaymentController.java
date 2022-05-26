@@ -51,17 +51,8 @@ public class PaymentController implements Initializable {
     }
 
     @FXML
-    private void GoBack() throws IOException {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Warning");
-        alert.setHeaderText("You need to pay again for changed food or seat, operation irreversible!");
-        alert.setContentText("The original payment will be returned to your card within 3 working days");
-
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK){
-            PageController controller = new PageController();
-            controller.change_page(goback_pay);
-        }
+    private void GoBack(){
+        PayGoBack goGoGo = new PayGoBack(goback_pay);
 
     }
     @FXML
