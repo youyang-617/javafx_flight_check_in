@@ -101,7 +101,10 @@ public class PageController {
             path = "seat-view.fxml";
             title = "Seat";
         }else if(b.getId().equals("button_next1")){
-            if("J1".equals(c.seatNum) || "J2".equals(c.seatNum)){
+            c.search();
+            System.out.println("zuoweishi");
+            System.out.println(c.seatNum);
+            if("J1".equals(c.seatNum) || "J2".equals(c.seatNum) || "A2".equals(c.seatNum) ||"A1".equals(c.seatNum) ||"C2".equals(c.seatNum) ||"C1".equals(c.seatNum) ||"L2".equals(c.seatNum) ||"L1".equals(c.seatNum) ){
                 path = "payment.fxml";
                 title = "payment";
             }else{
