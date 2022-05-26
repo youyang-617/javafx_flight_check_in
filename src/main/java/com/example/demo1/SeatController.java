@@ -13,6 +13,9 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
+/**
+ * @author Yuqi LIu
+ */
 public class SeatController implements Initializable {
     /**
      * Global variables passed between pages, used to identify the user
@@ -65,15 +68,7 @@ public class SeatController implements Initializable {
      */
     @FXML
     protected void goBack() throws IOException {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Go back");
-        alert.setHeaderText("You are about to go back to the previous page");
-        alert.setContentText("The data you have filled in on this page will not be recorded");
-
-        if (alert.showAndWait().get() == ButtonType.OK){
-            PageController controller = new PageController();
-            controller.change_page(previousButton);
-        }
+        CommonGoBack goGoGo = new CommonGoBack(previousButton);
     }
 
     /**

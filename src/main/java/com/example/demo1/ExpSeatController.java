@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * @author Yuqi Liu, Xiangrui Meng
+ */
 public class ExpSeatController  implements Initializable {
     public static String user_id;
     public static boolean seatState=false;
@@ -20,18 +23,12 @@ public class ExpSeatController  implements Initializable {
     @FXML
     private Button expBack;
 
+    /**
+     * when pressing the previous button, go back to the check-in page and show a hint
+     */
     @FXML
-    //when press the button PREVIOUS
     protected void goBack() throws IOException {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Log out");
-        alert.setHeaderText("You are about to log out");
-        alert.setContentText("Do you really want to log out?");
-
-        if (alert.showAndWait().get() == ButtonType.OK){
-            PageController controller = new PageController();
-            controller.change_page(expBack);
-        }
+        LogOut logOut = new LogOut(expBack);
     }
 
     @FXML
