@@ -3,7 +3,6 @@ import javafx.scene.control.Button;
 
 /**
  * A concrete implementation of the GoBack class for going to the previous page
- * @author Yuqi Liu (youyang617@outlook.com)
  * @date 2022/5/26
  */
 public class PayGoBack extends GoBack{

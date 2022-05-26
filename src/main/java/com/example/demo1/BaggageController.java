@@ -14,7 +14,11 @@ import javafx.scene.layout.Region;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+/**
+ * Display the baggage information on page
+ * including loading corresponding baggage information and displaying then on screen
+ *
+ */
 public class BaggageController implements Initializable {
     public static String user_id;
     public ScrollPane scroll;
@@ -31,10 +35,6 @@ public class BaggageController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-//        fruits.addAll(getData());
-//        if (fruits.size() > 0) {
-//            setChosenFruit(fruits.get(0));
-//        }
 
         Customer client = new Customer(user_id);
         String[] search = client.search();
