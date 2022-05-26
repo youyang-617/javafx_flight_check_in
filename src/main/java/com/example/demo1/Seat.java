@@ -69,7 +69,7 @@ public class Seat {
                 }
 
 
-                bufferedWriter.flush(); // 把缓存区内容压入文件
+                bufferedWriter.flush();
             }
         } catch (IOException e) {
             e.printStackTrace();

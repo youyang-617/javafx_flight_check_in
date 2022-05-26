@@ -12,6 +12,13 @@ import java.io.IOException;
  * @date 2022/5/26
  */
 public abstract class GoBack {
+    /**
+     * Constructor of GoBack Class for 'button control page return and prompt'
+     * @param title Alert Title
+     * @param header Alert Header
+     * @param content Alert Content
+     * @param button The bound button
+     */
     public GoBack(String title, String header, String content, Button button) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle(title);
