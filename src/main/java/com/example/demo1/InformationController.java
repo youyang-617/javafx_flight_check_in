@@ -39,9 +39,11 @@ public class InformationController {
     }
     @FXML
     protected void goback_seat() throws IOException{
+        System.out.println(chosenSeat);
+        Seat seatSelector = new Seat("BU1334");
+        seatSelector.update(chosenSeat,0);
         PageController pageController = new PageController();
         pageController.change_page(back_seat);
-        System.out.println(chosenSeat);
     }
     public void setValue(){
 

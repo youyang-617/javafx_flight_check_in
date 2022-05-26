@@ -148,7 +148,7 @@ public class SeatController implements Initializable {
         else{
             // Update on the flight seating chart
             Seat seatSelector = new Seat("BU1334");
-            seatSelector.update(choice);
+            seatSelector.update(choice,1);
             System.out.println("pressed");
             // Update the user information
             Customer client = new Customer(user_id);
