@@ -64,25 +64,27 @@ public class PaymentController implements Initializable {
     @FXML
     private void Pay()  {
         String Card = card.getText();
-        if (InputCheck.checkCreditCardNumber(Card)) {
+        String Pswd = password.getText();
+
+        if (InputCheck.checkCreditCardNumber(Card)&&InputCheck.checkCreditCardPassword(Pswd)) {
+
+            if(CreditCards.checkCreditCards(Card, Pswd)){
+                num_label.setText("");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Confirmation");
+                alert.setHeaderText("Payment accomplished!");
+                alert.setContentText("Click OK to continue");
+
+                Optional<ButtonType> result = alert.showAndWait();
+                if (result.get() == ButtonType.OK){
+                    warn.setText(" ");
+                }
+            } else {
+                num_label.setText("wrong input of either card number or password");
+            }
         } else {
-            num_label.setText("wrong pattern(should be 6 digits)");
+            num_label.setText("wrong number of digits entered");
         }
-
-
-
-
-
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Confirmation");
-        alert.setHeaderText("Payment accomplished!");
-        alert.setContentText("Click OK to continue");
-
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK){
-            warn.setText(" ");
-        }
-
 
     }
 
