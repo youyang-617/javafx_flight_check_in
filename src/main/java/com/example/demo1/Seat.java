@@ -3,6 +3,9 @@ package com.example.demo1;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * @author Junfeng Jin, Yuqi Liu
+ */
 public class Seat {
     /**
      * This is the class for selecting the seats.
@@ -175,7 +178,7 @@ public class Seat {
      * Find all the normal seats
      * @return Arraylist of normal seats
      */
-    public ArrayList findNormalSeats() {
+    public ArrayList<String> findNormalSeats() {
         int[][] state = new int[row][column];
         ArrayList<String> available = new ArrayList<>();
 
