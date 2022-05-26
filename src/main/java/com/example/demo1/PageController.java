@@ -33,7 +33,7 @@ import java.util.concurrent.Flow;
 
 public class PageController {
     public static String user_id;
-
+    Customer c = new Customer(user_id);
 
     public void change_page(Button b) throws IOException{
         Stage primaryStage=(Stage)b.getScene().getWindow();
@@ -101,8 +101,14 @@ public class PageController {
             path = "seat-view.fxml";
             title = "Seat";
         }else if(b.getId().equals("button_next1")){
-            path = "payment.fxml";
-            title = "payment";
+            if("J1".equals(c.seatNum) || "J2".equals(c.seatNum)){
+                path = "payment.fxml";
+                title = "payment";
+            }else{
+                path = "baggage.fxml";
+                title = "baggage";
+            }
+
         }else if("expBack".equals(b.getId())){
             path = "check_in.fxml";
             title = "check in";
