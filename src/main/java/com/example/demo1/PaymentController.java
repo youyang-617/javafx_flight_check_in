@@ -19,9 +19,18 @@ public class PaymentController implements Initializable {
     @FXML
     private Label money;
     @FXML
-    Label warn;
+    private Label warn;
+
+    @FXML
+    private Label num_label;
+
     @FXML
     private Label type;
+    @FXML
+    private TextField card;
+
+    @FXML
+    private TextField password;
 
     @FXML
     private Button goback_pay;
@@ -54,15 +63,23 @@ public class PaymentController implements Initializable {
     }
     @FXML
     private void Pay()  {
-        System.out.println("111111111");
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Confirmation Dialog");
-        alert.setHeaderText("CONFIRMATION");
-        alert.setContentText("Do you want to print your ticket?");
+        String Card = card.getText();
+        if (InputCheck.checkCreditCardNumber(Card)) {
+        } else {
+            num_label.setText("wrong pattern(should be 6 digits)");
+        }
+
+
+
+
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText("Payment accomplished!");
+        alert.setContentText("Click OK to continue");
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
-
             warn.setText(" ");
         }
 
