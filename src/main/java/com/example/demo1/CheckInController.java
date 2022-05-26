@@ -46,79 +46,13 @@ public class CheckInController implements Initializable {
     @FXML
     private Label fam_label;
 
-
+    /**
+     * Clear information in the tabs when initializing the page
+     * @param url the page parameter, generated automatically
+     * @param rb the page parameter, generated automatically
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        initTexts();
-
-    }
-
-    /**
-     * for log in
-     **/
-    @FXML
-    private void CheckIn(ActionEvent event) throws IOException {
-        checkIn();
-    }
-
-    public void checkIn() throws IOException {
-        if (num_tab.isSelected()) {
-            String OrderNumber = num_text.getText();
-
-            // check order number
-            if (InputCheck.checkOrderNumber(OrderNumber)) {
-                Customer client = new Customer(OrderNumber);
-
-                if (!"False".equals(client.search()[0])) {
-                    String[] search = client.search();
-                    System.out.println(search[0]);
-                    // successfully logged in
-                    setPageInfo(OrderNumber);
-                    PageController controller = new PageController();
-                    controller.change_page(login);
-                } else {
-                    num_label.setText("no user found");
-                }
-            } else {
-                num_label.setText("wrong pattern(should be 6 digits)");
-            }
-
-        }
-        if (id_tab.isSelected()) {
-
-            String familyName = familyName_text.getText();
-            String idNum = id_text.getText();
-
-            // check family name and id number
-            if (InputCheck.checkCustomerName(familyName) && InputCheck.checkIDNumber(idNum)) {
-                Customer client = new Customer(familyName, idNum);
-                String[] search = client.search();
-                if (!"False".equals(search[0])) {
-                    System.out.println(search[5]);
-                    // successfully log in
-                    setPageInfo(search[5]);
-                    PageController controller = new PageController();
-                    controller.change_page(login);
-                } else {
-                    fam_label.setText("no user found");
-                    System.out.println("wrong!!!!!");
-                }
-            } else {
-                fam_label.setText("incorrect Family name or ID");
-                System.out.println("so very wrong");
-            }
-
-        }
-        if (card_tab.isSelected()) {
-            System.out.println("ur photo");
-            setPageInfo("100001");
-            PageController controller = new PageController();
-            controller.change_page(login);
-        }
-    }
-
-    // to
-    private void initTexts() {
         num_tab.setOnSelectionChanged((Event event) -> {
             clearIssueEntries();
         });
@@ -128,19 +62,74 @@ public class CheckInController implements Initializable {
         card_tab.setOnSelectionChanged((Event event) -> {
             clearIssueEntries();
         });
+
     }
 
-    //clear everything entered
+    /**
+     * Triggered when user clicks on check in button
+     * Reads and determines different inputs depending on the user's chosen login method
+     * @throws IOException Exception loading page file
+     */
+    @FXML
+    private void CheckIn() throws IOException {
+
+        if (num_tab.isSelected()) {
+            String OrderNumber = num_text.getText();
+            if (InputCheck.checkOrderNumber(OrderNumber)) {
+                Customer client = new Customer(OrderNumber);
+                if (!"False".equals(client.search()[0])) {
+                    String[] search = client.search();
+                    setPageInfo(OrderNumber);
+                    PageController controller = new PageController();
+                    controller.change_page(login);
+                } else {
+                    num_label.setText("no user found");
+                }
+            } else {
+                num_label.setText("wrong pattern(should be 6 digits)");
+            }
+        }
+
+        if (id_tab.isSelected()) {
+            String familyName = familyName_text.getText();
+            String idNum = id_text.getText();
+            if (InputCheck.checkCustomerName(familyName) && InputCheck.checkIDNumber(idNum)) {
+                Customer client = new Customer(familyName, idNum);
+                String[] search = client.search();
+                if (!"False".equals(search[0])) {
+                    // successfully log in
+                    setPageInfo(search[5]);
+                    PageController controller = new PageController();
+                    controller.change_page(login);
+                } else {
+                    fam_label.setText("no user found");
+                }
+            } else {
+                fam_label.setText("incorrect Family name or ID");
+            }
+        }
+
+        if (card_tab.isSelected()) {
+            setPageInfo("100001");
+            PageController controller = new PageController();
+            controller.change_page(login);
+        }
+    }
+
+    /**
+     * Triggered when the user changes the login method, clearing the original input
+     */
     private void clearIssueEntries() {
         num_text.clear();
         familyName_text.clear();
         id_text.clear();
-        //  thingy_to_put_error_text_which_is_a_text.setText("");
+
     }
-
-    // paa the id number to all pages
+    /**
+     * pass the id number of the user logged in to all pages
+     * @param OrderNumber the id number of the user logged in
+     */
     public void setPageInfo(String OrderNumber) {
-
         SeatController.user_id = OrderNumber;
         PageController.user_id = OrderNumber;
         BaggageController.user_id = OrderNumber;

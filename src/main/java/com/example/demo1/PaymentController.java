@@ -1,19 +1,19 @@
 package com.example.demo1;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Region;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+
+/**
+ * Initialize the screen with the display of extra fee and set and food selection
+ * and check the credit card information and pay for extra fee
+ */
 public class PaymentController implements Initializable {
     public static String user_id;
     @FXML
@@ -37,43 +37,64 @@ public class PaymentController implements Initializable {
     @FXML
     private Button next_pay;
 
-    private Boolean flag=false;
+    private Boolean flag = false;
 
+
+    /**
+     * Initialize the screen with the display of extra fee and set and food selection
+     *
+     * @param location  the page parameter, generated automatically
+     * @param resources the page parameter, generated automatically
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Customer client = new Customer(user_id);
         client.search();
-        String meal=client.getTypeOfMeal();
-        String seat=client.getSeatNum();
-        int extrafee=client.getMoney();
-        money.setText("$"+ extrafee);
-        type.setText("Seat " + seat + " and Meal "+ meal);
+        String meal = client.getTypeOfMeal();
+        String seat = client.getSeatNum();
+        int extrafee = client.getMoney();
+        money.setText("$" + extrafee);
+        type.setText("Seat " + seat + " and Meal " + meal);
     }
 
+
+    /**
+     * when pressing the 'back' button, go to the previous page
+     */
     @FXML
-    private void GoBack(){
+    private void GoBack() {
         PayGoBack goGoGo = new PayGoBack(goback_pay);
-
     }
+
+
+    /**
+     * when pressing the 'next' button, go to the next page
+     *
+     * @throws IOException Exception loading page file
+     */
     @FXML
     private void Next() throws IOException {
-        if(flag){
+        if (flag) {
             PageController controller = new PageController();
             controller.change_page(next_pay);
-        }else{
+        } else {
             num_label.setText("You haven't finish your payment!");
         }
 
 
     }
+
+    /**
+     * check the credit card information and pay for extra fee
+     */
     @FXML
-    private void Pay()  {
+    private void Pay() {
         String Card = card.getText();
         String Pswd = password.getText();
 
-        if (InputCheck.checkCreditCardNumber(Card)&&InputCheck.checkCreditCardPassword(Pswd)) {
+        if (InputCheck.checkCreditCardNumber(Card) && InputCheck.checkCreditCardPassword(Pswd)) {
 
-            if(CreditCards.checkCreditCards(Card, Pswd)){
+            if (CreditCards.checkCreditCards(Card, Pswd)) {
                 flag = true;
                 num_label.setText("");
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -82,7 +103,7 @@ public class PaymentController implements Initializable {
                 alert.setContentText("Click OK to continue");
 
                 Optional<ButtonType> result = alert.showAndWait();
-                if (result.get() == ButtonType.OK){
+                if (result.get() == ButtonType.OK) {
                     warn.setText(" ");
                 }
             } else {

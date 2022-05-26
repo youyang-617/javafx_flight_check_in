@@ -14,7 +14,11 @@ import javafx.scene.layout.Region;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+/**
+ * Display the baggage information on page
+ * including loading corresponding baggage information and displaying then on screen
+ *
+ */
 public class BaggageController implements Initializable {
     public static String user_id;
     public ScrollPane scroll;
@@ -28,13 +32,13 @@ public class BaggageController implements Initializable {
     @FXML
     Label test;
 
+    /**
+     * loading corresponding baggage information and displaying then on screen
+     * @param location the page parameter, generated automatically
+     * @param resources the page parameter, generated automatically
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-//        fruits.addAll(getData());
-//        if (fruits.size() > 0) {
-//            setChosenFruit(fruits.get(0));
-//        }
 
         Customer client = new Customer(user_id);
         String[] search = client.search();
@@ -56,13 +60,11 @@ public class BaggageController implements Initializable {
                     row++;
                 }
 
-                grid.add(anchorPane, column++, row); //(child,column,row)
-                //set grid width
+                grid.add(anchorPane, column++, row);
                 grid.setMinWidth(Region.USE_COMPUTED_SIZE);
                 grid.setPrefWidth(Region.USE_COMPUTED_SIZE);
                 grid.setMaxWidth(Region.USE_PREF_SIZE);
 
-                //set grid height
                 grid.setMinHeight(Region.USE_COMPUTED_SIZE);
                 grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
                 grid.setMaxHeight(Region.USE_PREF_SIZE);
@@ -74,11 +76,18 @@ public class BaggageController implements Initializable {
         }
     }
 
+    /**
+     * when pressing the 'back' button, go to the previous page
+     */
     @FXML
     private void GoBack(){
         CommonGoBack goGoGo = new CommonGoBack(goback);
 
     }
+
+    /**
+     * when pressing the 'finish' button, go to the check-in page
+     */
     @FXML
     private void Finish() throws IOException {
         PageController controller = new PageController();
