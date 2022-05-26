@@ -3,20 +3,20 @@ package com.example.demo1;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * @author Junfeng Jin, Yuqi Liu
+ */
 public class Seat {
     /**
-     * @author Junfeng Jin
-     * @version 1.0
      * This is the class for selecting the seats.
      */
-    private int row = 35, column = 6;
-    private String flightNum;
+    private final int row = 35;
+    private final int column = 6;
     private String path;
     /**
      * This is the constructor
      */
     public Seat(String flightNum) {
-        this.flightNum = flightNum;
         this.path = "src/main/resources/flightSeat/" + flightNum + ".txt";
     }
 
@@ -60,12 +60,11 @@ public class Seat {
                  BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)
             ) {
                 for (int i = 0; i < row; i++) {
-                    String content = "";
+                    StringBuilder content = new StringBuilder();
                     for (int j = 0; j < column; j++) {
-                        content += state[i][j];
+                        content.append(state[i][j]);
                     }
                     bufferedWriter.write(content + "\r\n");
-
 
                 }
 
@@ -90,12 +89,13 @@ public class Seat {
             row = ""+selectedSeat.charAt(1);
 
         } else {
-            row = String.valueOf(selectedSeat.charAt(1)) + String.valueOf(selectedSeat.charAt(2));
+            row = selectedSeat.charAt(1) + String.valueOf(selectedSeat.charAt(2));
         }
         int row_num = Integer.parseInt(row)-1;
-        int column_num=0;
+        int column_num;
 
         column_num = parseSeat(column);
+        System.out.println("row:"+row_num+"col"+column_num);
 
 
         int[][] seat = this.findSeatState();
@@ -135,26 +135,18 @@ public class Seat {
      */
     public ArrayList<String> findRemainSeats() {
         int[][] state = new int[row][column];
-        ArrayList available = new ArrayList<String>();
+        ArrayList<String> available = new ArrayList<>();
 
 
         try (FileReader fileReader = new FileReader(path);
              BufferedReader bufferedReader = new BufferedReader(fileReader)
         ) {
             String line;
-            int i, j = 0;
+            int j = 0;
 
             while ((line = bufferedReader.readLine()) != null) {
 
-                for (i = 0; i < column; i++) {
-                    state[j][i] = Integer.parseInt(String.valueOf(line.charAt(i)));
-                    if (state[j][i] == 0) {
-                        String temp = parseSeat_reverse(i) + (j+1);
-                        available.add(temp);
-                    }
-                }
-
-                j++;
+                j = getJ(state, available, line, j);
 
             }
         } catch (IOException e) {
@@ -164,20 +156,34 @@ public class Seat {
         return available;
     }
 
+    private int getJ(int[][] state, ArrayList<String> available, String line, int j) {
+        int i;
+        for (i = 0; i < column; i++) {
+            state[j][i] = Integer.parseInt(String.valueOf(line.charAt(i)));
+            if (state[j][i] == 0) {
+                String temp = parseSeat_reverse(i) + (j+1);
+                available.add(temp);
+            }
+        }
+
+        j++;
+        return j;
+    }
+
     /**
      * Find all the Large seats
      * @return Arraylist of Large seats
      */
     public ArrayList<String> findLargeSeats() {
         int[][] state = new int[row][column];
-        ArrayList available = new ArrayList<String>();
+        ArrayList<String> available = new ArrayList<>();
 
 
         try (FileReader fileReader = new FileReader(path);
              BufferedReader bufferedReader = new BufferedReader(fileReader)
         ) {
             String line;
-            int i, j = 0;
+            int j = 0;
             int line_count = 0;
 
             while ((line = bufferedReader.readLine()) != null) {
@@ -185,15 +191,7 @@ public class Seat {
                     break;
                 }
                 line_count++;
-                for (i = 0; i < column; i++) {
-                    state[j][i] = Integer.parseInt(String.valueOf(line.charAt(i)));
-                    if (state[j][i] == 0) {
-                        String temp = parseSeat_reverse(i) + (j+1);
-                        available.add(temp);
-                    }
-                }
-
-                j++;
+                j = getJ(state, available, line, j);
 
             }
         } catch (IOException e) {
@@ -209,14 +207,14 @@ public class Seat {
      */
     public ArrayList<String> findNormalSeats() {
         int[][] state = new int[row][column];
-        ArrayList available = new ArrayList<String>();
+        ArrayList<String> available = new ArrayList<>();
 
 
         try (FileReader fileReader = new FileReader(path);
              BufferedReader bufferedReader = new BufferedReader(fileReader)
         ) {
             String line;
-            int i = 0, j = 2;
+            int j = 2;
             int line_count = 0;
 
             while ((line = bufferedReader.readLine()) != null) {
@@ -225,15 +223,7 @@ public class Seat {
                     continue;
                 }
 
-                for (i = 0; i < column; i++) {
-                    state[j][i] = Integer.parseInt(String.valueOf(line.charAt(i)));
-                    if (state[j][i] == 0) {
-                        String temp = parseSeat_reverse(i) + (j+1);
-                        available.add(temp);
-                    }
-                }
-
-                j++;
+                j = getJ(state, available, line, j);
 
             }
         } catch (IOException e) {
@@ -244,12 +234,11 @@ public class Seat {
     }
     public int parseSeat(Character column) {
         return switch (column) {
-            case 'A' -> 0;
             case 'B' -> 1;
             case 'C' -> 2;
-            case 'D' -> 3;
-            case 'E' -> 4;
-            case 'F' -> 5;
+            case 'J' -> 3;
+            case 'K' -> 4;
+            case 'L' -> 5;
             default -> 0;
         };
     }

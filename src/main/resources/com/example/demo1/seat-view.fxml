@@ -34,19 +34,22 @@
                   <Button fx:id="previousButton" layoutX="688.0" layoutY="178.0" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="85.0" text="&lt; Back" textFill="WHITE" />
                   <Button fx:id="confirmButton" layoutX="834.0" layoutY="178.0" mnemonicParsing="false" onAction="#seatContinueClick" prefHeight="30.0" prefWidth="85.0" text="Next &gt;" textFill="WHITE" />
                   <Label fx:id="welcomeText" alignment="CENTER" layoutX="465.0" layoutY="107.0" textAlignment="CENTER" />
-                  <Label fx:id="flightChosen" contentDisplay="CENTER" layoutX="254.0" layoutY="45.0" text="You haven't chosen" textAlignment="CENTER">
+                  <Label fx:id="flightChosen" contentDisplay="CENTER" layoutX="360.0" layoutY="61.0" text="You haven't chosen" textAlignment="CENTER" textFill="#575757">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="System Bold" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="flightChosen1" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="45.0" text="You have chosen:" textAlignment="CENTER">
+                  <Label fx:id="flightChosen1" alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="61.0" text="You have chosen:" textAlignment="CENTER">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="System Bold" size="25.0" />
                      </font>
                   </Label>
-                  <ChoiceBox id="choose" fx:id="choose" layoutX="14.0" layoutY="107.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: gray;" />
-                  <Label fx:id="seatStateLabel" layoutX="185.0" layoutY="107.0" text="Normal" />
-                  <Label layoutX="185.0" layoutY="122.0" text="Press PREVIOUS button to chose another kind of seat" />
+                  <ChoiceBox id="choose" fx:id="choose" layoutX="120.0" layoutY="123.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: gray;" />
+                  <Label fx:id="seatStateLabel" layoutX="291.0" layoutY="123.0" text="Normal">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Label layoutX="291.0" layoutY="138.0" text="Press PREVIOUS button to chose another kind of seat" textFill="#000000ad" />
                </children>
             </AnchorPane>
          </bottom>
@@ -58,7 +61,7 @@
                         <Image url="@../../../image/seat.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="346.0" layoutY="234.0" text="Schematic diagram of aircraft space" textFill="#000000ae">
+                  <Label alignment="CENTER" layoutX="346.0" layoutY="234.0" text="Schematic Diagram of Aircraft Space" textFill="#000000ad">
                      <font>
                         <Font size="15.0" />
                      </font>

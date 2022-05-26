@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <AnchorPane prefHeight="400.0" prefWidth="1200.0" stylesheets="@seat.css,@button.css" xmlns="http://javafx.com/javafx/8"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.PageController">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.InformationController">
     <Button fx:id="button_next" layoutX="1044.0" layoutY="334.0" mnemonicParsing="false" onMouseClicked="#goto_next"
             prefHeight="30.0" prefWidth="85.0" text="NEXT &gt;" textFill="WHITE"/>
     <Button fx:id="print" layoutX="485.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#setValue"

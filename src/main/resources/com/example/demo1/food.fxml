@@ -7,7 +7,7 @@
 <AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
             prefHeight="640.0" prefWidth="960.0" stylesheets="@ratioButton.css,@button.css"
             xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.demo1.PageController">
+            fx:controller="com.example.demo1.FoodController">
     <Label alignment="CENTER" layoutX="10.0" layoutY="20.0" prefHeight="84.0" prefWidth="941.0"
            text="Please choose the food ">
         <font>
@@ -39,13 +39,13 @@
                preserveRatio="true" AnchorPane.topAnchor="355.0">
         <Image url="@../../../pictures/D.jpeg"/>
     </ImageView>
-    <RadioButton fx:id="mealA" layoutX="103.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#MakeChoice"
+    <RadioButton fx:id="mealA" layoutX="103.0" layoutY="290.0" mnemonicParsing="false"
                  text="set meal A"/>
-    <RadioButton fx:id="mealC" layoutX="106.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#MakeChoice"
+    <RadioButton fx:id="mealC" layoutX="106.0" layoutY="518.0" mnemonicParsing="false"
                  text="set meal C"/>
-    <RadioButton fx:id="mealB" layoutX="409.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#MakeChoice"
+    <RadioButton fx:id="mealB" layoutX="409.0" layoutY="290.0" mnemonicParsing="false"
                  text="set meal B"/>
-    <RadioButton fx:id="mealD" layoutX="418.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#MakeChoice"
+    <RadioButton fx:id="mealD" layoutX="418.0" layoutY="518.0" mnemonicParsing="false"
                  text="set meal D"/>
     <Button fx:id="button_next1" layoutX="832.0" layoutY="576.0" mnemonicParsing="false"
             onMouseClicked="#goto_next_1" prefHeight="30.0" prefWidth="85.0" text="Next &gt;" textFill="WHITE"/>
