@@ -82,6 +82,8 @@ public class BaggageController implements Initializable {
     }
     @FXML
     private void Finish() throws IOException {
+        PageController controller = new PageController();
+        controller.change_page(finish);
     }
 
 

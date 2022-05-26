@@ -115,6 +115,9 @@ public class PageController {
         }else if("previousButton".equals(b.getId())){
             path = "seatType.fxml";
             title = "Select seat type";
+        }else if(b.getId().equals("finish")){
+            path = "check_in.fxml";
+            title = "check in";
         }
         else{
             path = "";
