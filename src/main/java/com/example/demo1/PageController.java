@@ -25,7 +25,7 @@ public class PageController {
         Stage primaryStage=(Stage)b.getScene().getWindow();
         //to open the new wimdow, we need to close the old window
         primaryStage.close();
-         NewPage(b);
+        NewPage(b);
     }
 
     /**

@@ -6,11 +6,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class PageApplication extends Application {
     @Override
@@ -19,10 +21,12 @@ public class PageApplication extends Application {
 
             FXMLLoader fxmlLoader = new FXMLLoader(PageApplication.class.getResource("check_in.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 960, 640);
+            stage.setResizable(false);
             stage.setTitle("Login");
+            stage.getIcons().add(new Image(
+                    Objects.requireNonNull(PageApplication.class.getResourceAsStream("/image/plane.png"))));
             stage.setScene(scene);
             stage.show();
-
             stage.setOnCloseRequest(event -> {
                 event.consume();
                 logout(stage);
