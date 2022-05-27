@@ -17,7 +17,7 @@ public class Seat {
      * This is the constructor
      */
     public Seat(String flightNum) {
-        this.path = "src/main/resources/flightSeat/" + flightNum + ".txt";
+        this.path = "./files/flightSeat/" + flightNum + ".txt";
     }
 
     /**

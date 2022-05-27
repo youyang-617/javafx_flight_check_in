@@ -31,8 +31,8 @@ public class Customer extends FileOperation{
     //row number of customer info in csv
     int line;
     //location of customer info
-    String filename = "src/main/resources/com/example/demo1/Customer_information.csv";
-    String tempFile = "src/main/resources/com/example/demo1/temp.csv";
+    String filename = "./files/Customer_information.csv";
+    String tempFile = "./files/temp.csv";
 
     public Customer(String bookingNum) {
 

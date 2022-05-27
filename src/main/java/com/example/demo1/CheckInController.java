@@ -1,20 +1,16 @@
 package com.example.demo1;
 
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 
 
@@ -74,12 +70,12 @@ public class CheckInController implements Initializable {
     private void CheckIn() throws IOException {
 
         if (num_tab.isSelected()) {
-            String OrderNumber = num_text.getText();
-            if (InputCheck.checkOrderNumber(OrderNumber)) {
-                Customer client = new Customer(OrderNumber);
+            String orderNumber = num_text.getText();
+            if (InputCheck.checkOrderNumber(orderNumber)) {
+                Customer client = new Customer(orderNumber);
                 if (!"False".equals(client.search()[0])) {
                     String[] search = client.search();
-                    setPageInfo(OrderNumber);
+                    setPageInfo(orderNumber);
                     PageController controller = new PageController();
                     controller.change_page(login);
                 } else {
