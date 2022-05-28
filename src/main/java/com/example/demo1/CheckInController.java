@@ -46,6 +46,9 @@ public class CheckInController implements Initializable {
     @FXML
     private Label fam_label;
 
+    @FXML
+    private Label photo_label;
+
     /**
      * Clear information in the tabs when initializing the page
      * @param url the page parameter, generated automatically
@@ -110,9 +113,8 @@ public class CheckInController implements Initializable {
         }
 
         if (card_tab.isSelected()) {
-            setPageInfo("100001");
-            PageController controller = new PageController();
-            controller.change_page(login);
+            photo_label.setText("Sorry, function still to be developed");
+
         }
     }
 
