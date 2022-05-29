@@ -1,16 +1,20 @@
 package com.example.demo1;
 
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 
@@ -42,6 +46,9 @@ public class CheckInController implements Initializable {
     @FXML
     private Label fam_label;
 
+    @FXML
+    private Label photo_label;
+
     /**
      * Clear information in the tabs when initializing the page
      * @param url the page parameter, generated automatically
@@ -58,6 +65,7 @@ public class CheckInController implements Initializable {
         card_tab.setOnSelectionChanged((Event event) -> {
             clearIssueEntries();
         });
+
     }
 
     /**
@@ -69,12 +77,12 @@ public class CheckInController implements Initializable {
     private void CheckIn() throws IOException {
 
         if (num_tab.isSelected()) {
-            String orderNumber = num_text.getText();
-            if (InputCheck.checkOrderNumber(orderNumber)) {
-                Customer client = new Customer(orderNumber);
+            String OrderNumber = num_text.getText();
+            if (InputCheck.checkOrderNumber(OrderNumber)) {
+                Customer client = new Customer(OrderNumber);
                 if (!"False".equals(client.search()[0])) {
                     String[] search = client.search();
-                    setPageInfo(orderNumber);
+                    setPageInfo(OrderNumber);
                     PageController controller = new PageController();
                     controller.change_page(login);
                 } else {
@@ -105,9 +113,8 @@ public class CheckInController implements Initializable {
         }
 
         if (card_tab.isSelected()) {
-            setPageInfo("100001");
-            PageController controller = new PageController();
-            controller.change_page(login);
+            photo_label.setText("Sorry, function still to be developed");
+
         }
     }
 
