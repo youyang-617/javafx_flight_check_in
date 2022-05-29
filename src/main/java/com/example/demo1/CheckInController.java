@@ -113,7 +113,7 @@ public class CheckInController implements Initializable {
         }
 
         if (card_tab.isSelected()) {
-            photo_label.setText("Sorry, function still to be developed");
+            photo_label.setText("Sorry, scanners broken, please use other methods");
 
         }
     }
