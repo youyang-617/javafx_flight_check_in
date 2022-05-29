@@ -59,7 +59,9 @@ public class InformationController {
      */
     @FXML
     protected void gobackSeat() throws IOException{
-        Seat seatSelector = new Seat("BU1334");
+        Customer client = new Customer(user_id);
+        String[] search = client.search();
+        Seat seatSelector = new Seat(search[3]);
         seatSelector.update(chosenSeat,0);
         //To make sure the passenger want to go back
         CommonGoBack goGoGo = new CommonGoBack(backSeat);
