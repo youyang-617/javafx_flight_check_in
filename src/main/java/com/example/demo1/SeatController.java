@@ -142,13 +142,15 @@ public class SeatController implements Initializable {
             flightChosen.setText("You haven't chosen");
         }
         else{
+            // find the customer
+            Customer client = new Customer(user_id);
+            String[] search = client.search();
             // Update on the flight seating chart
-            Seat seatSelector = new Seat("BU1334");
+            Seat seatSelector = new Seat(search[3]);
             seatSelector.update(choice,1);
             System.out.println("pressed");
             // Update the user information
-            Customer client = new Customer(user_id);
-            String[] search = client.search();
+
             client.ModifySeatNum(choice,search);
             // jump to the next page
             PageController controller = new PageController();
