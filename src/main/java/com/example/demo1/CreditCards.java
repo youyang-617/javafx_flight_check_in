@@ -3,9 +3,16 @@ package com.example.demo1;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
+/**
+ * Check that the card number and password entered by the user are the same as those in the txt file
+ */
 public class CreditCards {
 
+    /**
+     * Controller of the check-in page
+     * @param cardNum the credit card number
+     * @param password the password of the card
+     */
     public static boolean checkCreditCards(String cardNum, String password) {
         String path = "./files/credit card.txt";
 

@@ -17,7 +17,9 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
-
+/**
+ * Controller of the check-in page
+ */
 public class CheckInController implements Initializable {
     @FXML
     private Tab num_tab;
