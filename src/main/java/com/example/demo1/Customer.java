@@ -284,7 +284,7 @@ public class Customer extends FileOperation{
             extrafeeMeal=100;
         }
 
-        if ("J1".equals(seatNum)|| "J2".equals(seatNum))
+        if ("J1".equals(seatNum)|| "J2".equals(seatNum)|| "L1".equals(seatNum)|| "L2".equals(seatNum))
         {
             extrafeeSeat=323;
         }
