@@ -58,7 +58,6 @@ public class CheckInController implements Initializable {
         card_tab.setOnSelectionChanged((Event event) -> {
             clearIssueEntries();
         });
-
     }
 
     /**
