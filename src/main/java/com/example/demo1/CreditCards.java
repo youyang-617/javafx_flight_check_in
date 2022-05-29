@@ -14,7 +14,7 @@ public class CreditCards {
      * @param password the password of the card
      */
     public static boolean checkCreditCards(String cardNum, String password) {
-        String path = "./files/credit card.txt";
+        String path = "./files/creditcard/credit card.txt";
 
         try (FileReader fileReader = new FileReader(path);
              BufferedReader bufferedReader = new BufferedReader(fileReader)
