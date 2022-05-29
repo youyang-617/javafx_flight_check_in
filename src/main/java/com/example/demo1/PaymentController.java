@@ -53,7 +53,7 @@ public class PaymentController implements Initializable {
         String meal = client.getTypeOfMeal();
         String seat = client.getSeatNum();
         int extrafee = client.getMoney();
-        money.setText("$" + extrafee);
+        money.setText("£" + extrafee);
         type.setText("Seat " + seat + " and Meal " + meal);
     }
 
@@ -78,7 +78,7 @@ public class PaymentController implements Initializable {
             PageController controller = new PageController();
             controller.change_page(next_pay);
         } else {
-            num_label.setText("You haven't finish your payment!");
+            num_label.setText("You haven't finished your payment!");
         }
 
 

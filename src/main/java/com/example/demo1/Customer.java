@@ -277,16 +277,16 @@ public class Customer extends FileOperation{
     public int getMoney() {
         if ("E".equals(typeOfMeal)|| "F".equals(typeOfMeal))
         {
-            extrafeeMeal=50;
+            extrafeeMeal=10;
         }
         if ("EF".equals(typeOfMeal))
         {
-            extrafeeMeal=100;
+            extrafeeMeal=20;
         }
 
         if ("J1".equals(seatNum)|| "J2".equals(seatNum)|| "L1".equals(seatNum)|| "L2".equals(seatNum))
         {
-            extrafeeSeat=323;
+            extrafeeSeat=50;
         }
 
         money=extrafeeMeal+extrafeeSeat;

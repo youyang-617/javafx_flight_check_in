@@ -65,7 +65,7 @@
         </font>
     </Label>
     <Label layoutX="716.0" layoutY="242.0" prefHeight="24.0" prefWidth="220.0"
-           text="update, please press the button ">
+           text="upgrade, please press the button ">
         <font>
             <Font size="13.0"/>
         </font>
