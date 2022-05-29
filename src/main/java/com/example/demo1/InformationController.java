@@ -20,7 +20,7 @@ public class InformationController {
 
     /**labels used to print the information*/
     @FXML
-    Label name,flight,destination,date,gate;
+    Label name,flight,destination,date,gate,seat;
 
     /**labels used to warn the passenger*/
     @FXML
@@ -97,5 +97,6 @@ public class InformationController {
         destination.setText(c.destination);
         date.setText(c.date);
         gate.setText(c.gate);
+        seat.setText(c.seatNum);
     }
 }
