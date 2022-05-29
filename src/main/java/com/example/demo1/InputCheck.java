@@ -9,8 +9,6 @@ import java.util.regex.Matcher;
  * @version 1.0
  * This is the class for checking the validation of the input.
  */
-
-
 public class InputCheck {
     /**
      * Check the validation of the input of orderNumber

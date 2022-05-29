@@ -11,6 +11,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * The javafx application class
+ */
 public class PageApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {

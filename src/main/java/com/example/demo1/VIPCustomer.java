@@ -1,5 +1,8 @@
 package com.example.demo1;
 
+/**
+ * special functions extends customer
+ */
 public class VIPCustomer extends Customer {
     private double discount = 0.85;
     public VIPCustomer(String bookingNum) {
