@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 /**
+ * Classes for completing seating-related file reading and writing and information extraction
  * @author Junfeng Jin, Yuqi Liu
  */
 public class Seat {

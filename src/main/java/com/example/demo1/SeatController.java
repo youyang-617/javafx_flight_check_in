@@ -14,6 +14,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 /**
+ * Complete seat selection related operations
  * @author Yuqi LIu
  */
 public class SeatController implements Initializable {

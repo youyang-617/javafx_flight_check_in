@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
+ * Controller of the page which allows user to select Seat Type
  * @author Yuqi Liu, Xiangrui Meng
  */
 public class ExpSeatController  implements Initializable {
