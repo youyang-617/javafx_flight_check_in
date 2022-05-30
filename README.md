@@ -25,6 +25,9 @@ We have not used any other third-party libraries or templates.
 
 不需要配置环境的win_x64版本和mac_x64版本可以在release中下载，可以查阅UserManual获取更多帮助
 
+- [gitee](https://gitee.com/you-yang/javafx_flightReservation/releases/v0.3)
+- [github](https://github.com/youyang-617/javafx_flight_check_in/releases/tag/v0.3)
+
 ## Screenshots
 
 ![](https://s2.loli.net/2022/05/29/unUERIJFNt87wLp.png)
