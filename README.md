@@ -1,37 +1,34 @@
-# javafx实现航班预定桌面端
+# A Smart Flight Check-in Kiosk by Group 15 (EBU6304)
 
-#### 介绍
-作业来着!!
+## Introduction
 
-#### 软件架构
-软件架构说明
+This is the Group Project of Group 15 for the EBU6304 – Software Engineering Course. A check-in system that enables login, seat selection, meal selection, boarding pass printing, etc. 
 
+这是EBU6304-软件工程课程第15组的小组项目。一个能实现登录、选座、选餐、打印登机牌等功能的值机系统。
 
-#### 安装教程
+## Platform / Environment
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+We use `Javafx` to complete developing
 
-#### 使用说明
+项目基于`Javafx` （打开项目IDEA应该会自动加载环境），详细版本如下
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+- JDK version: OpenJDK18U-jdk_x64_windows_hotspot_18.0.1_10
+- Javafx SDK version (Javafx): openjfx-18.0.1_windows-x64_bin-sdk
 
-#### 参与贡献
+We have not used any other third-party libraries or templates.
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+我们没有使用任何其他第三方库
 
+## Screenshots
 
-#### 特技
+![](https://s2.loli.net/2022/05/29/unUERIJFNt87wLp.png)
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+![image-20220529140313638](https://s2.loli.net/2022/05/29/MqHtC1zUojIu6R9.png)
+
+![image-20220529140337542](https://s2.loli.net/2022/05/29/eHCcKufbjz6glIh.png)
+
+![image-20220529140347673](https://s2.loli.net/2022/05/29/54F2RMSZmzgbQ7E.png)
+
+![image-20220529140359954](https://s2.loli.net/2022/05/29/6xO2ZAERBvaQwLF.png)
+
+![image-20220529140422636](https://s2.loli.net/2022/05/29/qSREfDOZj4d3Lsh.png)
