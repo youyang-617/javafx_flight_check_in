@@ -1,5 +1,7 @@
 # A Smart Flight Check-in Kiosk by Group 15 (EBU6304)
 
+> 智能值机系统 (EBU6304 Group15)
+
 ## Introduction
 
 This is the Group Project of Group 15 for the EBU6304 – Software Engineering Course. A check-in system that enables login, seat selection, meal selection, boarding pass printing, etc. 
@@ -18,6 +20,10 @@ We use `Javafx` to complete developing
 We have not used any other third-party libraries or templates.
 
 我们没有使用任何其他第三方库
+
+## Released Software
+
+不需要配置环境的win_x64版本和mac_x64版本可以在release中下载，可以查阅UserManual获取更多帮助
 
 ## Screenshots
 
